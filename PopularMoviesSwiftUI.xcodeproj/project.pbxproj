@@ -48,6 +48,9 @@
 		3B952E7E24EABA240093726A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E7D24EABA240093726A /* AppView.swift */; };
 		3B952E8024EABA7C0093726A /* PopularMoviesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E7F24EABA7C0093726A /* PopularMoviesTab.swift */; };
 		3B952E8224EABAA80093726A /* FavoriteMoviesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8124EABAA80093726A /* FavoriteMoviesTab.swift */; };
+		3B952E8424EABD8D0093726A /* PopularMovieTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8324EABD8D0093726A /* PopularMovieTableRow.swift */; };
+		3B952E8624EAC1FB0093726A /* KingfisherSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B952E8524EAC1FB0093726A /* KingfisherSwiftUI.framework */; };
+		3B952E8824EC2CC90093726A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8724EC2CC90093726A /* ActivityIndicator.swift */; };
 		3BD35287244DBD2200464A07 /* .sourcery.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3BD35286244DBD2200464A07 /* .sourcery.yml */; };
 		3BD3528D244DBF5000464A07 /* MoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3528C244DBF5000464A07 /* MoviesUseCase.swift */; platformFilter = ios; };
 		3BD35292244DC08E00464A07 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3528F244DC08E00464A07 /* Services.swift */; platformFilter = ios; };
@@ -162,6 +165,9 @@
 		3B952E7D24EABA240093726A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		3B952E7F24EABA7C0093726A /* PopularMoviesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesTab.swift; sourceTree = "<group>"; };
 		3B952E8124EABAA80093726A /* FavoriteMoviesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesTab.swift; sourceTree = "<group>"; };
+		3B952E8324EABD8D0093726A /* PopularMovieTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableRow.swift; sourceTree = "<group>"; };
+		3B952E8524EAC1FB0093726A /* KingfisherSwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KingfisherSwiftUI.framework; path = Carthage/Build/iOS/KingfisherSwiftUI.framework; sourceTree = "<group>"; };
+		3B952E8724EC2CC90093726A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		3BD35286244DBD2200464A07 /* .sourcery.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .sourcery.yml; sourceTree = "<group>"; };
 		3BD3528C244DBF5000464A07 /* MoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUseCase.swift; sourceTree = "<group>"; };
 		3BD3528F244DC08E00464A07 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 				3BD352CC244E19A000464A07 /* Realm.framework in Frameworks */,
 				3B3AABD7244DB41200ADDDDB /* Core.framework in Frameworks */,
 				3BD352CF244E19A400464A07 /* RealmSwift.framework in Frameworks */,
+				3B952E8624EAC1FB0093726A /* KingfisherSwiftUI.framework in Frameworks */,
 				3B2F49C7245EB926008C6BD4 /* Kingfisher.framework in Frameworks */,
 				3BD352DA244E1B2100464A07 /* Alamofire.framework in Frameworks */,
 			);
@@ -229,6 +236,7 @@
 		3B2F49C3245CC8B2008C6BD4 /* PopularMovieTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				3B952E8324EABD8D0093726A /* PopularMovieTableRow.swift */,
 				3B2F49BF245CC8A7008C6BD4 /* PopularMovieTableViewCell.swift */,
 				3B2F49C0245CC8A7008C6BD4 /* PopularMovieTableViewCell.xib */,
 			);
@@ -316,6 +324,7 @@
 			children = (
 				3B5B34CA2455AB4D004B599A /* Base */,
 				3B5B34CD2455ABA6004B599A /* Protocols */,
+				3B952E8724EC2CC90093726A /* ActivityIndicator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -441,6 +450,7 @@
 		3BD352CA244E19A000464A07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B952E8524EAC1FB0093726A /* KingfisherSwiftUI.framework */,
 				3B2F49C6245EB926008C6BD4 /* Kingfisher.framework */,
 				3B5B34C82455AA44004B599A /* UIWindowTransitions.framework */,
 				3BD352D7244E1B1500464A07 /* Alamofire.framework */,
@@ -627,6 +637,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/UIWindowTransitions.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KingfisherSwiftUI.framework",
 			);
 			name = carthage;
 			outputFileListPaths = (
@@ -648,6 +659,8 @@
 				3B5B34C62455A596004B599A /* FaforiteMoviesViewModel.swift in Sources */,
 				3B5B34C52455A596004B599A /* FaforiteMoviesCoordinator.swift in Sources */,
 				3B5B348B24559BC2004B599A /* StoryboardMakeable.swift in Sources */,
+				3B952E8824EC2CC90093726A /* ActivityIndicator.swift in Sources */,
+				3B952E8424EABD8D0093726A /* PopularMovieTableRow.swift in Sources */,
 				3B952E7E24EABA240093726A /* AppView.swift in Sources */,
 				3B5B348A24559BC2004B599A /* Storyboards.swift in Sources */,
 				3B32B5332477297E0061461F /* DetailsScreenViewModel.swift in Sources */,

@@ -15,7 +15,7 @@ public struct PopularMoviesResult: Decodable {
     let results: [PopularMovie]
 }
 
-public struct PopularMovie: Decodable {
+public struct PopularMovie: Decodable, Identifiable, Hashable {
     public let poster_path: String?
     public let adult: Bool?
     public let overview: String?

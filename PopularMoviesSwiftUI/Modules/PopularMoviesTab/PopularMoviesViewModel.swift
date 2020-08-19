@@ -7,9 +7,10 @@
 //
 
 import Core
+import SwiftUI
 
-final class PopularMoviesViewModel: BaseViewModel {
-    
+final class PopularMoviesViewModel: BaseViewModel, ObservableObject {
+        
     override var maxMoviesToDownload: Int { 10000 }
     
     override func favoriteActionWith(movie: PopularMovie) {

@@ -26,35 +26,46 @@ struct PopularMovieTableRow: View {
             .placeholder {
                 Image(systemName: "photo")
                     .resizable()
+                    .scaledToFit()
                     .frame(width: 80, height: 80)
                     .opacity(0.3)
         }
         .resizable()
+        .scaledToFit()
         .frame(width: 80, height: 80)
+        
     }
     
     //MARK: - Body
     var body: some View {
-        HStack {
-            if isPreloading {
-                ActivityIndicator()
-                    .frame(width: 50, height: 50)
-                    .foregroundColor(.blue)
-            } else {
-                poster
-                VStack(alignment: .center) {
-                    Text(title ?? "")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .padding(5)
-                    
-                    Text(description ?? "")
-                        .lineLimit(3)
-                }.layoutPriority(1)
-                Image(systemName: "star.fill")
-                    .renderingMode(.template)
-                    .foregroundColor(isFavorite ? favoriteColor : commonColor)
+        VStack {
+            HStack {
+                if isPreloading {
+                    ActivityIndicator()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.blue)
+                } else {
+                    poster
+                    VStack(alignment: .center) {
+                        Text(title ?? "")
+                            .font(.system(size: 17))
+                            .fontWeight(.semibold)
+                            .padding(5)
+                            .lineLimit(1)
+                        
+                        Text(description ?? "")
+                            .font(.system(size: 14))
+                            .italic()
+                            .lineLimit(3)
+                    }.layoutPriority(1)
+                    Image(systemName: "star.fill")
+                        .renderingMode(.template)
+                        .foregroundColor(isFavorite ? favoriteColor : commonColor)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                }
             }
+            //Separator
+            Color.black.frame(height:CGFloat(2) / UIScreen.main.scale)
         }
     }
 }

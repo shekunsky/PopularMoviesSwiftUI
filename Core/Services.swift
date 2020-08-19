@@ -8,7 +8,7 @@
 
 import Foundation
 
-final public class Services: UseCasesProvider {
+final public class Services: UseCasesProvider, ObservableObject {
     
    private let context: Context
 

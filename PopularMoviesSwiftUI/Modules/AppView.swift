@@ -7,21 +7,24 @@
 //
 
 import SwiftUI
-
-import SwiftUI
+import Core
+import Combine
 
 struct AppView: View {
+    @EnvironmentObject var useCases: Services
+    
     var body: some View {
         TabView {
-            PopularMoviesTab()
+            PopularMoviesTab(model: PopularMoviesViewModel(useCases: useCases,
+                                                           coordinator: PopularMoviesCoordinator(useCases: useCases, navigationController: UINavigationController())))
                 .tabItem {
-                    Image(systemName: "video.fill")
+                    Image(systemName: "video.fill").font(.system(size: 22))
                     Text("Popular")
                 }
 
             FavoriteMoviesTab()
                 .tabItem {
-                    Image(systemName: "star.fill")
+                    Image(systemName: "star.fill").font(.system(size: 22))
                     Text("Favorite")
                 }
         }

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Alex2. All rights reserved.
 //
 
-
+import SwiftUI
 import Core
 
 protocol PopularMoviesOperable {
@@ -28,7 +28,7 @@ class BaseViewModel: ViewModel, PopularMoviesOperable, UseCasesConsumer {
     var isFetchInProgress = false
     var coordinator: TabBaseCoordinator?
     var currentPage: Int = 0
-    var popularMovies: [PopularMovie] = []
+    @Published var popularMovies: [PopularMovie] = []
     var moviesForCurrentPage: [PopularMovie]? {
         didSet {
             popularMovies.append(contentsOf: moviesForCurrentPage ?? [])

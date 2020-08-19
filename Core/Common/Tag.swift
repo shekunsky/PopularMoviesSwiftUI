@@ -38,9 +38,3 @@ extension Tag: ExpressibleByIntegerLiteral where Value == Int {
         self.init(rawValue: value)
     }
 }
-
-public protocol Identifiable {
-    associatedtype Identifier: Codable & Hashable = Int
-    typealias ID = Tag<Self, Identifier>
-    var id: ID { get }
-}

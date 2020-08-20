@@ -18,21 +18,25 @@ struct PopularMoviesTab: View {
         List {
             ForEach(model.popularMovies, id: \.id) { movie in
                 
-                PopularMovieTableRow(posterPath: self.fullPathToThumbnailFrom(path: movie.poster_path),
+                PopularMovieTableRow(posterPath: self.model.fullPathToThumbnailFrom(path: movie.poster_path),
                                      title: movie.title,
-                                     description: movie.overview, isFavorite: false, isPreloading: false) {
+                                     description: movie.overview,
+                                     isFavorite: self.model.checkIsFavoriteMovie(id: movie.id ?? 0),
+                                     isPreloading: false) {
+                                        // FavoriteAction
+                                        self.model.favoriteActionWith(movie: movie)
                                         
                 }.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+            }
+            // Preloading
+            PopularMovieTableRow(posterPath: nil, title: nil, description: nil, isFavorite: false, isPreloading: true, favoriteAction: nil).onAppear {
+                // Load next page
+                self.model.getPopularMovies()
             }
         }.onAppear() {
             UITableView.appearance().separatorStyle = .none
             self.model.getPopularMovies()
         }
-    }
-    
-    func fullPathToThumbnailFrom(path: String?) -> String? {
-        guard let endPath = path else { return nil }
-        return  "https://image.tmdb.org/t/p/w200\(endPath)"
     }
 }
 

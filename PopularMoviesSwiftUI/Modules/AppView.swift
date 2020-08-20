@@ -22,7 +22,7 @@ struct AppView: View {
                     Text("Popular")
                 }
 
-            FavoriteMoviesTab()
+            FavoriteMoviesTab(model: FavoriteMoviesViewModel(useCases: useCases, coordinator: FaforiteMoviesCoordinator(useCases: useCases)))
                 .tabItem {
                     Image(systemName: "star.fill").font(.system(size: 22))
                     Text("Favorite")

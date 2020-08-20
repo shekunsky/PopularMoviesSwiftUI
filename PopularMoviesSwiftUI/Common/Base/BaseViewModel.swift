@@ -13,6 +13,8 @@ protocol PopularMoviesOperable {
     func getPopularMovies()
     func setup(cell: PopularMovieTableViewCell, for indexPath: IndexPath, isPreloading: Bool)
     func showDetailsForMovie(at indexPath: IndexPath, from: TabBarBaseViewController)
+    func checkIsFavoriteMovie(id: Int) -> Bool
+    func fullPathToThumbnailFrom(path: String?) -> String?
     var popularMovies: [PopularMovie] { get set }
     var moviesForCurrentPage: [PopularMovie]? { get set }
     var fetchFailed: (()->())? { get set }
@@ -65,6 +67,10 @@ class BaseViewModel: ViewModel, PopularMoviesOperable, UseCasesConsumer {
         
     }
     
+    func checkIsFavoriteMovie(id: Int) -> Bool {
+        useCases.movies.checkIsFavoriteMovie(id: id)
+    }
+    
     func calculateIndexPathsToReload(from newMovies: [PopularMovie]) -> [IndexPath] {
         let startIndex = popularMovies.count - newMovies.count
         let endIndex = startIndex + newMovies.count
@@ -78,5 +84,9 @@ class BaseViewModel: ViewModel, PopularMoviesOperable, UseCasesConsumer {
                                     parentVC: from, action: { [weak self] in
                                         self?.favoriteActionWith(movie: movie)
         })
+    }
+    
+    func fullPathToThumbnailFrom(path: String?) -> String? {
+        useCases.movies.fullPathToThumbnailFrom(path: path)
     }
 }

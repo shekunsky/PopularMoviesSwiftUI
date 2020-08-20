@@ -13,7 +13,7 @@ struct PopularMovieTableRow: View {
     var posterPath: String?
     var title: String?
     var description: String?
-    var isFavorite: Bool = false
+    @State var isFavorite: Bool = false
     @State var isPreloading: Bool = false
     var favoriteAction: (()->())? = nil
     
@@ -33,7 +33,6 @@ struct PopularMovieTableRow: View {
         .resizable()
         .scaledToFit()
         .frame(width: 80, height: 80)
-        
     }
     
     //MARK: - Body
@@ -46,6 +45,7 @@ struct PopularMovieTableRow: View {
                         .foregroundColor(.blue)
                 } else {
                     poster
+                    
                     VStack(alignment: .center) {
                         Text(title ?? "")
                             .font(.system(size: 17))
@@ -58,10 +58,20 @@ struct PopularMovieTableRow: View {
                             .italic()
                             .lineLimit(3)
                     }.layoutPriority(1)
-                    Image(systemName: "star.fill")
-                        .renderingMode(.template)
-                        .foregroundColor(isFavorite ? favoriteColor : commonColor)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                    
+                    Button(action: {
+                        // your action here
+                        self.isFavorite = !self.isFavorite
+                        self.favoriteAction?()
+                    }) {
+                        Image(systemName: "star.fill")
+                            .renderingMode(.template)
+                            .foregroundColor(isFavorite ? favoriteColor : commonColor)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    
                 }
             }
             //Separator

@@ -7,8 +7,9 @@
 //
 
 import Core
+import SwiftUI
 
-final class FavoriteMoviesViewModel: BaseViewModel {
+final class FavoriteMoviesViewModel: BaseViewModel, ObservableObject {
     
     override var maxMoviesToDownload: Int { popularMovies.count }
     

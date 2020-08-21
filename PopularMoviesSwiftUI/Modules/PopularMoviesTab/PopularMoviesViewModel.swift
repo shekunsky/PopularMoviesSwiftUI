@@ -8,9 +8,10 @@
 
 import Core
 import SwiftUI
+import Combine
 
 final class PopularMoviesViewModel: BaseViewModel, ObservableObject {
-        
+            
     override var maxMoviesToDownload: Int { 10000 }
     
     override func favoriteActionWith(movie: PopularMovie) {
@@ -19,7 +20,6 @@ final class PopularMoviesViewModel: BaseViewModel, ObservableObject {
         } else {
             useCases.movies.addToFavorites(movie: movie)
         }
-        //reloadTable?()
     }
     
     override func getPopularMovies() {

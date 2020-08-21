@@ -10,11 +10,11 @@ import Foundation
 
 final class Context {
     
-    let environment: Environment
+    let environment: AppEnvironment
     let networking: Networking
     let database: FavoriteMoviesOperable
     
-    init(environment: Environment,
+    init(environment: AppEnvironment,
          networking: Networking,
          database: Database) {
         self.environment = environment

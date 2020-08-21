@@ -23,11 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    var environment: Environment {
+    var environment: AppEnvironment {
         if isUITestingEnabled {
-            return Environment.development(.test)
+            return AppEnvironment.development(.test)
         } else {
-            return Environment.development(.normal)
+            return AppEnvironment.development(.normal)
         }
     }
     

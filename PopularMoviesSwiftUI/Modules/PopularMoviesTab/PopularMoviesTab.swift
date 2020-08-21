@@ -13,38 +13,43 @@ import Core
 struct PopularMoviesTab: View {
     
     @ObservedObject var model: PopularMoviesViewModel
-        
+    @State private var selectedMovie: PopularMovie? = nil
+    @State private var showDetails: Bool = false
+    @State var needRefresh: Bool = false
+    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(model.popularMovies, id: \.id) { movie in
-                    NavigationLink(destination: DetailsScreenView(model: DetailsScreenViewModel(movieDetails: movie,
-                                                                                                isFavoriteMovie: self.model.checkIsFavoriteMovie(id: movie.id ?? 0),
-                                                                                                useCases: self.model.useCases,
-                                                                                                coordinator: self.model.coordinator!, action: {
-                                                                                                    self.model.favoriteActionWith(movie: movie)
-                                                                                                    
-                    }))) {
-                        PopularMovieTableRow(posterPath: self.model.fullPathToThumbnailFrom(path: movie.poster_path),
-                                             title: movie.title,
-                                             description: movie.overview,
-                                             isFavorite: self.model.checkIsFavoriteMovie(id: movie.id ?? 0),
-                                             isPreloading: false) {
-                                                // FavoriteAction
-                                                self.model.favoriteActionWith(movie: movie)
-                        }
-                    }.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
-                
+        List {
+            ForEach(model.popularMovies, id: \.id) { movie in
+                PopularMovieTableRow(posterPath: self.model.fullPathToThumbnailFrom(path: movie.poster_path),
+                                     title: movie.title,
+                                     description: movie.overview,
+                                     isFavorite: self.model.checkIsFavoriteMovie(id: movie.id ?? 0),
+                                     isPreloading: false) {
+                                        // FavoriteAction
+                                        self.model.favoriteActionWith(movie: movie)
+                }.onTapGesture {
+                    print("TAP")
+                    self.selectedMovie = movie
+                    self.showDetails.toggle()
                 }
-                // Preloading
-                PopularMovieTableRow(posterPath: nil, title: nil, description: nil, isFavorite: false, isPreloading: true, favoriteAction: nil).onAppear {
-                    // Load next page
-                    self.model.getPopularMovies()
-                }
-            }.onAppear() {
-                UITableView.appearance().separatorStyle = .none
+            }.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+            
+            // Preloading
+            PopularMovieTableRow(posterPath: nil, title: nil, description: nil, isFavorite: false, isPreloading: true, favoriteAction: nil).onAppear {
+                // Load next page
                 self.model.getPopularMovies()
             }
+        }.onAppear() {
+            UITableView.appearance().separatorStyle = .none
+            self.model.getPopularMovies()
+        }.sheet(isPresented: $showDetails) {
+            DetailsScreenView(model: DetailsScreenViewModel(movieDetails: self.selectedMovie!,
+                                                            isFavoriteMovie: self.model.checkIsFavoriteMovie(id: self.selectedMovie?.id ?? 0),
+                                                            useCases: self.model.useCases,
+                                                            coordinator: self.model.coordinator!, action: {
+                                                                self.model.favoriteActionWith(movie: self.selectedMovie!)
+                                                                
+            }), needRefresh: self.$needRefresh)
         }
     }
 }

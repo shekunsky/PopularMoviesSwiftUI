@@ -18,7 +18,7 @@ final public class Services: UseCasesProvider, ObservableObject {
     // Services Gateways
     public var movies: MoviesUseCase { return moviesService }
 
-    public init(environment: Environment) {
+    public init(environment: AppEnvironment) {
         Services.setupServices(environment: environment)
         let network = Network(apiEndPoint: environment.baseURLAddress,
                               imagesEndPoint: environment.imagesURLAddress,

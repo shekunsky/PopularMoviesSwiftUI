@@ -57,7 +57,7 @@
 		3BD3528D244DBF5000464A07 /* MoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3528C244DBF5000464A07 /* MoviesUseCase.swift */; platformFilter = ios; };
 		3BD35292244DC08E00464A07 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3528F244DC08E00464A07 /* Services.swift */; platformFilter = ios; };
 		3BD35293244DC08E00464A07 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD35290244DC08E00464A07 /* Context.swift */; platformFilter = ios; };
-		3BD35294244DC08E00464A07 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD35291244DC08E00464A07 /* Environment.swift */; platformFilter = ios; };
+		3BD35294244DC08E00464A07 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD35291244DC08E00464A07 /* AppEnvironment.swift */; platformFilter = ios; };
 		3BD3529E244DC9AC00464A07 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3529D244DC9AC00464A07 /* MoviesService.swift */; };
 		3BD352A4244DF3B500464A07 /* AutoUseCaseProvider.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD352A3244DF3B400464A07 /* AutoUseCaseProvider.generated.swift */; };
 		3BD352BA244E13CA00464A07 /* AbstractDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD352A7244E13CA00464A07 /* AbstractDatabase.swift */; };
@@ -176,7 +176,7 @@
 		3BD3528C244DBF5000464A07 /* MoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUseCase.swift; sourceTree = "<group>"; };
 		3BD3528F244DC08E00464A07 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		3BD35290244DC08E00464A07 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
-		3BD35291244DC08E00464A07 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		3BD35291244DC08E00464A07 /* AppEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		3BD3529D244DC9AC00464A07 /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		3BD352A3244DF3B400464A07 /* AutoUseCaseProvider.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoUseCaseProvider.generated.swift; sourceTree = "<group>"; };
 		3BD352A7244E13CA00464A07 /* AbstractDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDatabase.swift; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				3BD35290244DC08E00464A07 /* Context.swift */,
-				3BD35291244DC08E00464A07 /* Environment.swift */,
+				3BD35291244DC08E00464A07 /* AppEnvironment.swift */,
 				3BD3528F244DC08E00464A07 /* Services.swift */,
 				3B2CE4B424694D480026C0C3 /* Entities */,
 				3B5B34BE2455A3B8004B599A /* Models */,
@@ -703,7 +703,7 @@
 				3B5B34BD2455A311004B599A /* NSObject+AssociatedObject.swift in Sources */,
 				3BD352E4244E1C1B00464A07 /* Services+External.swift in Sources */,
 				3BD352C1244E13CA00464A07 /* Network.swift in Sources */,
-				3BD35294244DC08E00464A07 /* Environment.swift in Sources */,
+				3BD35294244DC08E00464A07 /* AppEnvironment.swift in Sources */,
 				3B2CE4B624694F740026C0C3 /* Realm+Extensions.swift in Sources */,
 				3BD352E8244E1C1B00464A07 /* Convertible.swift in Sources */,
 				3BD35292244DC08E00464A07 /* Services.swift in Sources */,

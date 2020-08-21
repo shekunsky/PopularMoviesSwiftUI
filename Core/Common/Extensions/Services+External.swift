@@ -9,7 +9,7 @@
 import RealmSwift
 
 extension Services {
-    static func setupServices(environment: Environment) {
+    static func setupServices(environment: AppEnvironment) {
         setupRealm()
     }
     

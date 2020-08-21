@@ -13,6 +13,8 @@ import KingfisherSwiftUI
 struct DetailsScreenView: View {
     
     @ObservedObject var model: DetailsScreenViewModel
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var needRefresh: Bool
     
     private var poster: some View {
         let url = URL(string: model.posterPath ?? "")
@@ -34,6 +36,8 @@ struct DetailsScreenView: View {
         if model.isFavoriteMovie {
             return Button(action: {
                 self.model.makeActionOnMovie()
+                self.needRefresh.toggle()
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Text("REMOVE FROM FAVORITE")
             }
@@ -44,6 +48,8 @@ struct DetailsScreenView: View {
         } else {
             return Button(action: {
                 self.model.makeActionOnMovie()
+                self.needRefresh.toggle()
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Text("ADD TO FAVORITE")
             }
@@ -59,7 +65,7 @@ struct DetailsScreenView: View {
             //Close button
             HStack{
                 Button(action: {
-                    
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Image(systemName: "multiply.circle.fill")
                         .renderingMode(.template)
@@ -158,6 +164,6 @@ struct DetailsScreenView_Previews: PreviewProvider {
                                        video: false,
                                        vote_average: 6),
             isFavoriteMovie: false,
-            useCases: Services(environment: Environment.development(.normal)), coordinator: FaforiteMoviesCoordinator(useCases: Services(environment: Environment.development(.normal))), action: nil) )
+            useCases: Services(environment: AppEnvironment.development(.normal)), coordinator: FaforiteMoviesCoordinator(useCases: Services(environment: AppEnvironment.development(.normal))), action: nil), needRefresh: .constant(false))
     }
 }

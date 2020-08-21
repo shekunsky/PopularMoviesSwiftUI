@@ -8,7 +8,7 @@
 import Foundation
 
 /// Enum is used to define on which backend target will point application
-public enum Environment {
+public enum AppEnvironment {
     case development(ExecuteMode)
     case stage(ExecuteMode)
     case production
@@ -76,7 +76,7 @@ public enum Environment {
     }
 }
 
-extension Environment.ExecuteMode{
+extension AppEnvironment.ExecuteMode{
     public var mode: String {
         switch self {
         case .normal:

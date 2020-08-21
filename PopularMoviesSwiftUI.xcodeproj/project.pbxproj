@@ -51,6 +51,8 @@
 		3B952E8424EABD8D0093726A /* PopularMovieTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8324EABD8D0093726A /* PopularMovieTableRow.swift */; };
 		3B952E8624EAC1FB0093726A /* KingfisherSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B952E8524EAC1FB0093726A /* KingfisherSwiftUI.framework */; };
 		3B952E8824EC2CC90093726A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8724EC2CC90093726A /* ActivityIndicator.swift */; };
+		3B952E8C24EEADB90093726A /* DetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8B24EEADB90093726A /* DetailsScreenView.swift */; };
+		3B952E8E24EF18D80093726A /* SystemColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8D24EF18D80093726A /* SystemColors.swift */; };
 		3BD35287244DBD2200464A07 /* .sourcery.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3BD35286244DBD2200464A07 /* .sourcery.yml */; };
 		3BD3528D244DBF5000464A07 /* MoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3528C244DBF5000464A07 /* MoviesUseCase.swift */; platformFilter = ios; };
 		3BD35292244DC08E00464A07 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3528F244DC08E00464A07 /* Services.swift */; platformFilter = ios; };
@@ -168,6 +170,8 @@
 		3B952E8324EABD8D0093726A /* PopularMovieTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableRow.swift; sourceTree = "<group>"; };
 		3B952E8524EAC1FB0093726A /* KingfisherSwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KingfisherSwiftUI.framework; path = Carthage/Build/iOS/KingfisherSwiftUI.framework; sourceTree = "<group>"; };
 		3B952E8724EC2CC90093726A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		3B952E8B24EEADB90093726A /* DetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenView.swift; sourceTree = "<group>"; };
+		3B952E8D24EF18D80093726A /* SystemColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColors.swift; sourceTree = "<group>"; };
 		3BD35286244DBD2200464A07 /* .sourcery.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .sourcery.yml; sourceTree = "<group>"; };
 		3BD3528C244DBF5000464A07 /* MoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUseCase.swift; sourceTree = "<group>"; };
 		3BD3528F244DC08E00464A07 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			children = (
 				3B32B5302477296D0061461F /* DetailsScreenViewController.swift */,
 				3B32B5322477297E0061461F /* DetailsScreenViewModel.swift */,
+				3B952E8B24EEADB90093726A /* DetailsScreenView.swift */,
 			);
 			path = DetailsScreen;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				3B5B34CA2455AB4D004B599A /* Base */,
 				3B5B34CD2455ABA6004B599A /* Protocols */,
 				3B952E8724EC2CC90093726A /* ActivityIndicator.swift */,
+				3B952E8D24EF18D80093726A /* SystemColors.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5B348C24559BC2004B599A /* Coordinator.swift in Sources */,
+				3B952E8C24EEADB90093726A /* DetailsScreenView.swift in Sources */,
 				3B5B34C62455A596004B599A /* FaforiteMoviesViewModel.swift in Sources */,
 				3B5B34C52455A596004B599A /* FaforiteMoviesCoordinator.swift in Sources */,
 				3B5B348B24559BC2004B599A /* StoryboardMakeable.swift in Sources */,
@@ -666,6 +673,7 @@
 				3B32B5332477297E0061461F /* DetailsScreenViewModel.swift in Sources */,
 				3B2CE4B9246980680026C0C3 /* BaseViewModel.swift in Sources */,
 				3B952E8024EABA7C0093726A /* PopularMoviesTab.swift in Sources */,
+				3B952E8E24EF18D80093726A /* SystemColors.swift in Sources */,
 				3B5B34B72455A171004B599A /* PopularMoviesViewModel.swift in Sources */,
 				3B952E7C24EAB9C30093726A /* SceneDelegate.swift in Sources */,
 				3B5B34B32455A057004B599A /* TabBarBaseViewController.swift in Sources */,

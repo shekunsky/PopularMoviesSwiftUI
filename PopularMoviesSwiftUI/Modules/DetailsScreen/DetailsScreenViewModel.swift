@@ -7,6 +7,7 @@
 //
 
 import Core
+import SwiftUI
 
 protocol MovieDetailsOperable {
     var movieDetails: PopularMovie { get set }
@@ -15,7 +16,7 @@ protocol MovieDetailsOperable {
     func makeActionOnMovie()
 }
 
-class DetailsScreenViewModel: BaseViewModel, MovieDetailsOperable {
+class DetailsScreenViewModel: BaseViewModel, MovieDetailsOperable, ObservableObject {
     var movieDetails: PopularMovie
     var isFavoriteMovie: Bool
     var posterPath: String? {

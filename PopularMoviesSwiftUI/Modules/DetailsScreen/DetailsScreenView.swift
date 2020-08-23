@@ -28,7 +28,7 @@ struct DetailsScreenView: View {
         }
         .resizable()
         .scaledToFit()
-        .frame(width: (UIScreen.main.bounds.width - 30)/2, height: (UIScreen.main.bounds.width - 30)*1.5/2)
+        .frame(width: (UIScreen.main.bounds.width - 45)/2, height: (UIScreen.main.bounds.width - 45)*1.5/2)
     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
     }
     
@@ -42,7 +42,7 @@ struct DetailsScreenView: View {
                 Text("REMOVE FROM FAVORITE")
             }
             .buttonStyle(PlainButtonStyle())
-            .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+            .frame(minWidth: 200, maxWidth: .infinity, minHeight: 40)
             .foregroundColor(.white)
             .background(Color.systemRed)
         } else {
@@ -54,7 +54,7 @@ struct DetailsScreenView: View {
                 Text("ADD TO FAVORITE")
             }
             .buttonStyle(PlainButtonStyle())
-            .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+            .frame(minWidth: 200, maxWidth: .infinity, minHeight: 40)
             .foregroundColor(.white)
             .background(Color.systemGreen)
         }
@@ -70,7 +70,7 @@ struct DetailsScreenView: View {
                     Image(systemName: "multiply.circle.fill")
                         .renderingMode(.template)
                         .foregroundColor(.red)
-                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 0))
                 }
                 Spacer()
             }
@@ -79,7 +79,7 @@ struct DetailsScreenView: View {
             Text(model.movieDetails.title ?? "")
                 .font(.system(size: 18))
                 .fontWeight(.semibold)
-                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
                 .fixedSize(horizontal: false, vertical: true)
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
@@ -90,8 +90,9 @@ struct DetailsScreenView: View {
                 
                 Text(model.movieDetails.overview ?? "")
                     .font(.system(size: 12))
-                    .frame(width: (UIScreen.main.bounds.width - 30)/2, height: (UIScreen.main.bounds.width - 30)*1.5/2)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                    .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 10))
+                    .frame(width: (UIScreen.main.bounds.width - 45)/2, height: (UIScreen.main.bounds.width - 45)*1.5/2, alignment: .top)
+                    
             }
             
             // Info
@@ -101,15 +102,27 @@ struct DetailsScreenView: View {
                         Text("Release Date: ")
                             .font(.system(size: 17))
                             .fontWeight(.medium)
+                        
+                        Spacer(minLength: 5)
+                        
                         Text("Adult: ")
                             .font(.system(size: 17))
                             .fontWeight(.medium)
+                        
+                        Spacer(minLength: 5)
+                        
                         Text("Popularity: ")
                             .font(.system(size: 17))
                             .fontWeight(.medium)
+                        
+                        Spacer(minLength: 5)
+                        
                         Text("Votes: ")
                             .font(.system(size: 17))
                             .fontWeight(.medium)
+                        
+                        Spacer(minLength: 5)
+                        
                         Text("Votes Average: ")
                             .font(.system(size: 17))
                             .fontWeight(.medium)
@@ -121,15 +134,27 @@ struct DetailsScreenView: View {
                         Text(model.movieDetails.release_date ?? "")
                             .font(.system(size: 17))
                             .italic()
+                        
+                        Spacer(minLength: 5)
+                        
                         Text(model.movieDetails.adult ?? false ? "YES": "NO")
                             .font(.system(size: 17))
                             .italic()
+                        
+                        Spacer(minLength: 5)
+                        
                         Text("\(model.movieDetails.popularity ?? 0, specifier: "%.2f")")
                             .font(.system(size: 17))
                             .italic()
+                        
+                        Spacer(minLength: 5)
+                        
                         Text("\(model.movieDetails.vote_count ?? 0)")
                             .font(.system(size: 17))
                             .italic()
+                        
+                        Spacer(minLength: 5)
+                        
                         Text("\(model.movieDetails.vote_average ?? 0, specifier: "%.2f")")
                             .font(.system(size: 17))
                             .italic()
@@ -138,10 +163,16 @@ struct DetailsScreenView: View {
             }.fixedSize().padding()
             
             // Action Button
-            actionButton
-                .cornerRadius(20)
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
+            HStack {
+                Spacer(minLength: 30)
+                actionButton
+                    .cornerRadius(20)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
                 
+                Spacer(minLength: 30)
+            }
+            
+            Spacer()
         }
     }
 }

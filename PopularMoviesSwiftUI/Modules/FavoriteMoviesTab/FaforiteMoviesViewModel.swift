@@ -15,24 +15,22 @@ final class FavoriteMoviesViewModel: BaseViewModel, ObservableObject {
     
     override func favoriteActionWith(movie: PopularMovie) {
         if useCases.movies.checkIsFavoriteMovie(id: movie.id ?? 0) {
+            setFavorite(state: false, for: movie.id)
             useCases.movies.deleteFromFavorites(movie: movie)
             if let index = popularMovies.firstIndex(where: { $0.id == movie.id }) {
                 popularMovies.remove(at: index)
             }
         } else {
             useCases.movies.addToFavorites(movie: movie)
+            setFavorite(state: true, for: movie.id)
         }
-        reloadTable?()
     }
     
     override func getPopularMovies() {
         let loadedMovies = useCases.movies.getFavoriteMovies()
         
         DispatchQueue.main.async { [weak self] in
-            self?.popularMovies = []
-            self?.moviesForCurrentPage = loadedMovies
-            let indexPathsToReload = self?.calculateIndexPathsToReload(from: loadedMovies)
-            self?.onFetchCompleted?(indexPathsToReload)
+            self?.popularMovies = loadedMovies
         }
     }
 }

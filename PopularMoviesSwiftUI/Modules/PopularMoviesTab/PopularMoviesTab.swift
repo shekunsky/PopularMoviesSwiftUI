@@ -19,7 +19,7 @@ struct PopularMoviesTab: View {
     
     var body: some View {
         List {
-            ForEach(model.popularMovies, id: \.id) { movie in
+            ForEach(model.popularMovies, id: \.self) { movie in
                 PopularMovieTableRow(posterPath: self.model.fullPathToThumbnailFrom(path: movie.poster_path),
                                      title: movie.title,
                                      description: movie.overview,
@@ -28,7 +28,6 @@ struct PopularMoviesTab: View {
                                         // FavoriteAction
                                         self.model.favoriteActionWith(movie: movie)
                 }.onTapGesture {
-                    print("TAP")
                     self.selectedMovie = movie
                     self.showDetails.toggle()
                 }

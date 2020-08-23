@@ -359,8 +359,8 @@
 			isa = PBXGroup;
 			children = (
 				3B5B34C22455A596004B599A /* FaforiteMoviesCoordinator.swift */,
-				3B5B34C32455A596004B599A /* FaforiteMoviesViewModel.swift */,
 				3B5B34C42455A596004B599A /* FaforiteMoviesViewController.swift */,
+				3B5B34C32455A596004B599A /* FaforiteMoviesViewModel.swift */,
 				3B952E8124EABAA80093726A /* FavoriteMoviesTab.swift */,
 			);
 			path = FavoriteMoviesTab;

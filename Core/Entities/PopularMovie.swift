@@ -16,7 +16,7 @@ public struct PopularMoviesResult: Decodable {
 }
 
 public struct PopularMovie: Decodable, Identifiable, Hashable {
-    public init(poster_path: String?, adult: Bool?, overview: String?, release_date: String?, genre_ids: [Int]?, id: Int?, original_title: String?, original_language: String?, title: String?, backdrop_path: String?, popularity: Float?, vote_count: Int?, video: Bool?, vote_average: Float?) {
+    public init(poster_path: String?, adult: Bool?, overview: String?, release_date: String?, genre_ids: [Int]?, id: Int?, original_title: String?, original_language: String?, title: String?, backdrop_path: String?, popularity: Float?, vote_count: Int?, video: Bool?, vote_average: Float?, isFavorite: Bool? = false) {
         self.poster_path = poster_path
         self.adult = adult
         self.overview = overview
@@ -31,6 +31,7 @@ public struct PopularMovie: Decodable, Identifiable, Hashable {
         self.vote_count = vote_count
         self.video = video
         self.vote_average = vote_average
+        self.isFavorite = isFavorite
     }
     
     public let poster_path: String?
@@ -47,4 +48,5 @@ public struct PopularMovie: Decodable, Identifiable, Hashable {
     public let vote_count: Int?
     public let video: Bool?
     public let vote_average: Float?
+    public var isFavorite: Bool?
 }

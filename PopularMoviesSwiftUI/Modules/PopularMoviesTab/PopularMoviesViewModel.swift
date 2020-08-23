@@ -17,8 +17,10 @@ final class PopularMoviesViewModel: BaseViewModel, ObservableObject {
     override func favoriteActionWith(movie: PopularMovie) {
         if useCases.movies.checkIsFavoriteMovie(id: movie.id ?? 0) {
             useCases.movies.deleteFromFavorites(movie: movie)
+            setFavorite(state: false, for: movie.id)
         } else {
             useCases.movies.addToFavorites(movie: movie)
+            setFavorite(state: true, for: movie.id)
         }
     }
     

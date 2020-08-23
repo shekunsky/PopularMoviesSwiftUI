@@ -61,7 +61,6 @@ struct PopularMovieTableRow: View {
                     
                     Button(action: {
                         // your action here
-                        self.isFavorite = !self.isFavorite
                         self.favoriteAction?()
                     }) {
                         Image(systemName: "star.fill")

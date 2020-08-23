@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Core
+import Combine
 
 protocol PopularMoviesOperable {
     func getPopularMovies()
@@ -27,13 +28,19 @@ class BaseViewModel: ViewModel, PopularMoviesOperable, UseCasesConsumer {
     typealias UseCases = HasMoviesUseCase
     
     //MARK: - Vars
+    let objectWillChange = ObservableObjectPublisher()
     var isFetchInProgress = false
     var coordinator: TabBaseCoordinator?
     var currentPage: Int = 0
-    @Published var popularMovies: [PopularMovie] = []
+    @Published var popularMovies: [PopularMovie] = [] {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     var moviesForCurrentPage: [PopularMovie]? {
         didSet {
             popularMovies.append(contentsOf: moviesForCurrentPage ?? [])
+            objectWillChange.send()
         }
     }
     var fetchFailed: (()->())?
@@ -88,5 +95,17 @@ class BaseViewModel: ViewModel, PopularMoviesOperable, UseCasesConsumer {
     
     func fullPathToThumbnailFrom(path: String?) -> String? {
         useCases.movies.fullPathToThumbnailFrom(path: path)
+    }
+    
+    func setFavorite(state: Bool, for movieId: Int?) {
+        for (index, _) in popularMovies.enumerated() {
+            if popularMovies[index].id == movieId {
+                if popularMovies[index].isFavorite == nil {
+                    popularMovies[index].isFavorite = true
+                } else {
+                    popularMovies[index].isFavorite?.toggle()
+                }
+            }
+        }
     }
 }

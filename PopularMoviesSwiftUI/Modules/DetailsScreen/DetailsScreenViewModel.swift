@@ -23,12 +23,11 @@ class DetailsScreenViewModel: BaseViewModel, MovieDetailsOperable, ObservableObj
         useCases.movies.fullPathToImageFrom(path: movieDetails.poster_path)
     }
     
-    init(movieDetails: PopularMovie, isFavoriteMovie: Bool, useCases: UseCases, coordinator: TabBaseCoordinator, action:  (()->Void)?) {
+    init(movieDetails: PopularMovie, isFavoriteMovie: Bool, useCases: UseCases, action:  (()->Void)?) {
         self.movieDetails = movieDetails
         self.isFavoriteMovie = isFavoriteMovie
         super.init()
         self.useCases = useCases
-        self.coordinator = coordinator
         self.actionForDetailsScreen = action
     }
     

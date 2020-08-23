@@ -16,6 +16,8 @@ struct DetailsScreenView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var needRefresh: Bool
     
+    var widthForPoster: CGFloat = (UIScreen.main.bounds.width - 45)/2
+    
     private var poster: some View {
         let url = URL(string: model.posterPath ?? "")
         return KFImage(url)
@@ -28,8 +30,8 @@ struct DetailsScreenView: View {
         }
         .resizable()
         .scaledToFit()
-        .frame(width: (UIScreen.main.bounds.width - 45)/2, height: (UIScreen.main.bounds.width - 45)*1.5/2)
-    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+        .frame(width: widthForPoster, height: widthForPoster*1.5)
+        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
     }
     
     private var actionButton: some View {
@@ -70,7 +72,7 @@ struct DetailsScreenView: View {
                     Image(systemName: "multiply.circle.fill")
                         .renderingMode(.template)
                         .foregroundColor(.red)
-                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 0))
+                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 0))
                 }
                 Spacer()
             }
@@ -91,8 +93,7 @@ struct DetailsScreenView: View {
                 Text(model.movieDetails.overview ?? "")
                     .font(.system(size: 12))
                     .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 10))
-                    .frame(width: (UIScreen.main.bounds.width - 45)/2, height: (UIScreen.main.bounds.width - 45)*1.5/2, alignment: .top)
-                    
+                    .frame(width: widthForPoster, height: widthForPoster*1.5, alignment: .top)
             }
             
             // Info
@@ -143,7 +144,7 @@ struct DetailsScreenView: View {
                         
                         Spacer(minLength: 5)
                         
-                        Text("\(model.movieDetails.popularity ?? 0, specifier: "%.2f")")
+                        Text("\(model.movieDetails.popularity ?? 0, specifier: "%.3f")")
                             .font(.system(size: 17))
                             .italic()
                         
@@ -155,7 +156,7 @@ struct DetailsScreenView: View {
                         
                         Spacer(minLength: 5)
                         
-                        Text("\(model.movieDetails.vote_average ?? 0, specifier: "%.2f")")
+                        Text("\(model.movieDetails.vote_average ?? 0, specifier: "%.1f")")
                             .font(.system(size: 17))
                             .italic()
                     }
@@ -195,6 +196,6 @@ struct DetailsScreenView_Previews: PreviewProvider {
                                        video: false,
                                        vote_average: 6),
             isFavoriteMovie: false,
-            useCases: Services(environment: AppEnvironment.development(.normal)), coordinator: FaforiteMoviesCoordinator(useCases: Services(environment: AppEnvironment.development(.normal))), action: nil), needRefresh: .constant(false))
+            useCases: Services(environment: AppEnvironment.development(.normal)), action: nil), needRefresh: .constant(false))
     }
 }

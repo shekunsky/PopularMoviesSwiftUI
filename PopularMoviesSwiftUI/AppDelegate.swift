@@ -11,28 +11,10 @@ import Core
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-    
-    private lazy var services: Services = Services(environment: environment)
-    private lazy var appCoordinator: AppCoordinator = AppCoordinator(useCases: self.services)
-    
+        
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = appCoordinator.window
         return true
-    }
-
-    var environment: AppEnvironment {
-        if isUITestingEnabled {
-            return AppEnvironment.development(.test)
-        } else {
-            return AppEnvironment.development(.normal)
-        }
-    }
-    
-    var isUITestingEnabled: Bool {
-        get { return ProcessInfo.processInfo.arguments.contains("UI-Testing") }
     }
     
     // MARK: UISceneSession Lifecycle

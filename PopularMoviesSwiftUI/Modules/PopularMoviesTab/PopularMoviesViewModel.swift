@@ -34,7 +34,6 @@ final class PopularMoviesViewModel: BaseViewModel, ObservableObject {
             guard let loadedMovies = result else {
                 DispatchQueue.main.async {
                     self?.isFetchInProgress = false
-                    self?.fetchFailed?()
                     self?.currentPage -= 1
                 }
                 return
@@ -42,12 +41,6 @@ final class PopularMoviesViewModel: BaseViewModel, ObservableObject {
             DispatchQueue.main.async {
                 self?.moviesForCurrentPage = loadedMovies
                 self?.isFetchInProgress = false
-                if self?.currentPage ?? 0  > 1 {
-                    let indexPathsToReload = self?.calculateIndexPathsToReload(from: loadedMovies)
-                    self?.onFetchCompleted?(indexPathsToReload)
-                } else {
-                    self?.onFetchCompleted?(nil)
-                }
             }
         }
     }

@@ -15,14 +15,13 @@ struct AppView: View {
     
     var body: some View {
         TabView {
-            PopularMoviesTab(model: PopularMoviesViewModel(useCases: useCases,
-                                                           coordinator: PopularMoviesCoordinator(useCases: useCases, navigationController: UINavigationController())))
+            PopularMoviesTab(model: PopularMoviesViewModel(useCases: useCases))
                 .tabItem {
                     Image(systemName: "video.fill").font(.system(size: 22))
                     Text("Popular")
                 }
 
-            FavoriteMoviesTab(model: FavoriteMoviesViewModel(useCases: useCases, coordinator: FaforiteMoviesCoordinator(useCases: useCases)))
+            FavoriteMoviesTab(model: FavoriteMoviesViewModel(useCases: useCases))
                 .tabItem {
                     Image(systemName: "star.fill").font(.system(size: 22))
                     Text("Favorite")

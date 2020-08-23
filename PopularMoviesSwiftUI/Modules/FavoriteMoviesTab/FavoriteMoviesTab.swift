@@ -40,11 +40,11 @@ struct FavoriteMoviesTab: View {
             DetailsScreenView(model: DetailsScreenViewModel(movieDetails: self.selectedMovie!,
                                                             isFavoriteMovie: self.model.checkIsFavoriteMovie(id: self.selectedMovie?.id ?? 0),
                                                             useCases: self.model.useCases,
-                                                            coordinator: self.model.coordinator!, action: {
+                                                            action: {
                                                                 self.model.favoriteActionWith(movie: self.selectedMovie!)
                                                                 
             }), needRefresh: self.$needRefresh)
-        }
+        }.padding(.top)
     }
 }
 

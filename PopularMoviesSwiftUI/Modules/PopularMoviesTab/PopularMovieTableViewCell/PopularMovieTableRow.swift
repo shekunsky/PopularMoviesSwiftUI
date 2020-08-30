@@ -60,7 +60,6 @@ struct PopularMovieTableRow: View {
                     }.layoutPriority(1)
                     
                     Button(action: {
-                        // your action here
                         self.favoriteAction?()
                     }) {
                         Image(systemName: "star.fill")
@@ -69,8 +68,6 @@ struct PopularMovieTableRow: View {
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
                     }
                     .buttonStyle(PlainButtonStyle())
-                    
-                    
                 }
             }
             //Separator

@@ -17,6 +17,7 @@ struct DetailsScreenView: View {
     @Binding var needRefresh: Bool
     
     var widthForPoster: CGFloat = (UIScreen.main.bounds.width - 45)/2
+    let fontSize: CGFloat = 17
     
     private var poster: some View {
         let url = URL(string: model.posterPath ?? "")
@@ -46,7 +47,7 @@ struct DetailsScreenView: View {
             .buttonStyle(PlainButtonStyle())
             .frame(minWidth: 200, maxWidth: .infinity, minHeight: 40)
             .foregroundColor(.white)
-            .background(Color.systemRed)
+            .background(Color(UIColor.red))
         } else {
             return Button(action: {
                 self.model.makeActionOnMovie()
@@ -101,31 +102,31 @@ struct DetailsScreenView: View {
                 VStack(alignment: .trailing, spacing: 5) {
                     Group {
                         Text("Release Date: ")
-                            .font(.system(size: 17))
+                            .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
                         Spacer(minLength: 5)
                         
                         Text("Adult: ")
-                            .font(.system(size: 17))
+                            .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
                         Spacer(minLength: 5)
                         
                         Text("Popularity: ")
-                            .font(.system(size: 17))
+                            .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
                         Spacer(minLength: 5)
                         
                         Text("Votes: ")
-                            .font(.system(size: 17))
+                            .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
                         Spacer(minLength: 5)
                         
                         Text("Votes Average: ")
-                            .font(.system(size: 17))
+                            .font(.system(size: fontSize))
                             .fontWeight(.medium)
                     }
                 }.fixedSize(horizontal: true, vertical: false)
@@ -133,31 +134,31 @@ struct DetailsScreenView: View {
                 VStack(alignment: .leading, spacing: 5) {
                     Group {
                         Text(model.movieDetails.release_date ?? "")
-                            .font(.system(size: 17))
+                            .font(.system(size: fontSize))
                             .italic()
                         
                         Spacer(minLength: 5)
                         
                         Text(model.movieDetails.adult ?? false ? "YES": "NO")
-                            .font(.system(size: 17))
+                            .font(.system(size: fontSize))
                             .italic()
                         
                         Spacer(minLength: 5)
                         
                         Text("\(model.movieDetails.popularity ?? 0, specifier: "%.3f")")
-                            .font(.system(size: 17))
+                            .font(.system(size: fontSize))
                             .italic()
                         
                         Spacer(minLength: 5)
                         
                         Text("\(model.movieDetails.vote_count ?? 0)")
-                            .font(.system(size: 17))
+                            .font(.system(size: fontSize))
                             .italic()
                         
                         Spacer(minLength: 5)
                         
                         Text("\(model.movieDetails.vote_average ?? 0, specifier: "%.1f")")
-                            .font(.system(size: 17))
+                            .font(.system(size: fontSize))
                             .italic()
                     }
                 }.fixedSize(horizontal: true, vertical: false)
@@ -172,7 +173,6 @@ struct DetailsScreenView: View {
                 
                 Spacer(minLength: 30)
             }
-            
             Spacer()
         }
     }

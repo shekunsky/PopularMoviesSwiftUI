@@ -31,7 +31,10 @@ struct PopularMoviesTab: View {
                     self.selectedMovie = movie
                     self.showDetails.toggle()
                 }
-            }.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+            }
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+            .listRowInsets(EdgeInsets())
+            .background(Color.systemBackground)
             
             // Preloading
             PopularMovieTableRow(posterPath: nil, title: nil, description: nil, isFavorite: false, isPreloading: true, favoriteAction: nil).onAppear {

@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "fca036f7aeca07124067cb6e0c12b0ad6359e3d4",
+          "version": "5.1.0"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "7ccfb6cefdb6180cde839310e3dbd5b2d6fefee5",
+          "version": "5.13.3"
+        }
+      },
+      {
+        "package": "Realm",
+        "repositoryURL": "https://github.com/realm/realm-cocoa.git",
+        "state": {
+          "branch": null,
+          "revision": "c236b2c1270fe41ba7c101a1d17ef56494987cb9",
+          "version": "10.5.0"
+        }
+      },
+      {
+        "package": "RealmDatabase",
+        "repositoryURL": "https://github.com/realm/realm-core",
+        "state": {
+          "branch": null,
+          "revision": "7390723ae39b432bd00f093ea84e3b79534a202c",
+          "version": "10.3.2"
+        }
+      },
+      {
+        "package": "UIWindowTransitions",
+        "repositoryURL": "https://github.com/malcommac/UIWindowTransitions.git",
+        "state": {
+          "branch": null,
+          "revision": "9fae35fc44e2742cb12f640afbad6111355bda85",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

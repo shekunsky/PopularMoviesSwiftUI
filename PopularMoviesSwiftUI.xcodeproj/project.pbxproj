@@ -11,7 +11,6 @@
 		3B2CE4B624694F740026C0C3 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2CE4B524694F740026C0C3 /* Realm+Extensions.swift */; };
 		3B2CE4B9246980680026C0C3 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2CE4B8246980680026C0C3 /* BaseViewModel.swift */; };
 		3B2EF6AD249F5D03007D847E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B2EF6AC249F5D03007D847E /* README.md */; };
-		3B2F49C7245EB926008C6BD4 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2F49C6245EB926008C6BD4 /* Kingfisher.framework */; };
 		3B32B5332477297E0061461F /* DetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32B5322477297E0061461F /* DetailsScreenViewModel.swift */; };
 		3B3AABB6244DB23F00ADDDDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3AABB5244DB23F00ADDDDB /* AppDelegate.swift */; };
 		3B3AABC1244DB24A00ADDDDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3AABC0244DB24A00ADDDDB /* Assets.xcassets */; };
@@ -27,16 +26,20 @@
 		3B5B34BD2455A311004B599A /* NSObject+AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B34BC2455A311004B599A /* NSObject+AssociatedObject.swift */; };
 		3B5B34C02455A3D1004B599A /* PopularMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B34BF2455A3D1004B599A /* PopularMovie.swift */; };
 		3B5B34C62455A596004B599A /* FaforiteMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B34C32455A596004B599A /* FaforiteMoviesViewModel.swift */; };
-		3B5B34C92455AA44004B599A /* UIWindowTransitions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5B34C82455AA44004B599A /* UIWindowTransitions.framework */; };
+		3B91FF92259695060072CC0C /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3B91FF91259695060072CC0C /* KingfisherSwiftUI */; };
+		3B91FF93259695060072CC0C /* KingfisherSwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 3B91FF91259695060072CC0C /* KingfisherSwiftUI */; };
 		3B952E7C24EAB9C30093726A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E7B24EAB9C30093726A /* SceneDelegate.swift */; };
 		3B952E7E24EABA240093726A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E7D24EABA240093726A /* AppView.swift */; };
 		3B952E8024EABA7C0093726A /* PopularMoviesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E7F24EABA7C0093726A /* PopularMoviesTab.swift */; };
 		3B952E8224EABAA80093726A /* FavoriteMoviesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8124EABAA80093726A /* FavoriteMoviesTab.swift */; };
 		3B952E8424EABD8D0093726A /* PopularMovieTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8324EABD8D0093726A /* PopularMovieTableRow.swift */; };
-		3B952E8624EAC1FB0093726A /* KingfisherSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B952E8524EAC1FB0093726A /* KingfisherSwiftUI.framework */; };
 		3B952E8824EC2CC90093726A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8724EC2CC90093726A /* ActivityIndicator.swift */; };
 		3B952E8C24EEADB90093726A /* DetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8B24EEADB90093726A /* DetailsScreenView.swift */; };
 		3B952E8E24EF18D80093726A /* SystemColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B952E8D24EF18D80093726A /* SystemColors.swift */; };
+		3BC2D18E259652C7007733F4 /* Realm in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 3BC2D18D259652C7007733F4 /* Realm */; };
+		3BC2D190259652C7007733F4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 3BC2D18F259652C7007733F4 /* RealmSwift */; settings = {ATTRIBUTES = (Required, ); }; };
+		3BC2D19325968F70007733F4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 3BC2D19225968F70007733F4 /* Alamofire */; };
+		3BC2D199259691C5007733F4 /* UIWindowTransitions in Frameworks */ = {isa = PBXBuildFile; productRef = 3BC2D198259691C5007733F4 /* UIWindowTransitions */; };
 		3BD35287244DBD2200464A07 /* .sourcery.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3BD35286244DBD2200464A07 /* .sourcery.yml */; };
 		3BD3528D244DBF5000464A07 /* MoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3528C244DBF5000464A07 /* MoviesUseCase.swift */; platformFilter = ios; };
 		3BD35292244DC08E00464A07 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3528F244DC08E00464A07 /* Services.swift */; platformFilter = ios; };
@@ -48,19 +51,6 @@
 		3BD352BD244E13CA00464A07 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD352AB244E13CA00464A07 /* Database.swift */; };
 		3BD352C0244E13CA00464A07 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD352B0244E13CA00464A07 /* Networking.swift */; };
 		3BD352C1244E13CA00464A07 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD352B1244E13CA00464A07 /* Network.swift */; };
-		3BD352C9244E15E300464A07 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 3BD352C8244E15E200464A07 /* Cartfile */; };
-		3BD352CC244E19A000464A07 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352CB244E19A000464A07 /* Realm.framework */; };
-		3BD352CD244E19A100464A07 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352CB244E19A000464A07 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3BD352CF244E19A400464A07 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352CE244E19A400464A07 /* RealmSwift.framework */; };
-		3BD352D0244E19A400464A07 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352CE244E19A400464A07 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3BD352D2244E1A5D00464A07 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352CE244E19A400464A07 /* RealmSwift.framework */; };
-		3BD352D3244E1A5D00464A07 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352CE244E19A400464A07 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3BD352D5244E1A6200464A07 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352CB244E19A000464A07 /* Realm.framework */; };
-		3BD352D6244E1A6200464A07 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352CB244E19A000464A07 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3BD352D8244E1B1500464A07 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352D7244E1B1500464A07 /* Alamofire.framework */; };
-		3BD352D9244E1B1500464A07 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352D7244E1B1500464A07 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3BD352DA244E1B2100464A07 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352D7244E1B1500464A07 /* Alamofire.framework */; };
-		3BD352DB244E1B2100464A07 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD352D7244E1B1500464A07 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BD352E4244E1C1B00464A07 /* Services+External.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD352DE244E1C1A00464A07 /* Services+External.swift */; };
 		3BD352E5244E1C1B00464A07 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3BD352DF244E1C1A00464A07 /* .gitkeep */; };
 		3BD352E6244E1C1B00464A07 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD352E0244E1C1A00464A07 /* Tag.swift */; };
@@ -84,23 +74,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3BD352CD244E19A100464A07 /* Realm.framework in Embed Frameworks */,
+				3B91FF93259695060072CC0C /* KingfisherSwiftUI in Embed Frameworks */,
 				3B3AABD8244DB41200ADDDDB /* Core.framework in Embed Frameworks */,
-				3BD352D0244E19A400464A07 /* RealmSwift.framework in Embed Frameworks */,
-				3BD352DB244E1B2100464A07 /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3BD352D4244E1A5D00464A07 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3BD352D6244E1A6200464A07 /* Realm.framework in Embed Frameworks */,
-				3BD352D9244E1B1500464A07 /* Alamofire.framework in Embed Frameworks */,
-				3BD352D3244E1A5D00464A07 /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,7 +87,6 @@
 		3B2CE4B524694F740026C0C3 /* Realm+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Extensions.swift"; sourceTree = "<group>"; };
 		3B2CE4B8246980680026C0C3 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		3B2EF6AC249F5D03007D847E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		3B2F49C6245EB926008C6BD4 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		3B32B5322477297E0061461F /* DetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenViewModel.swift; sourceTree = "<group>"; };
 		3B3AABB2244DB23F00ADDDDB /* PopularMoviesSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularMoviesSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3AABB5244DB23F00ADDDDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,13 +104,11 @@
 		3B5B34BC2455A311004B599A /* NSObject+AssociatedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+AssociatedObject.swift"; sourceTree = "<group>"; };
 		3B5B34BF2455A3D1004B599A /* PopularMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovie.swift; sourceTree = "<group>"; };
 		3B5B34C32455A596004B599A /* FaforiteMoviesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaforiteMoviesViewModel.swift; sourceTree = "<group>"; };
-		3B5B34C82455AA44004B599A /* UIWindowTransitions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIWindowTransitions.framework; path = Carthage/Build/iOS/UIWindowTransitions.framework; sourceTree = "<group>"; };
 		3B952E7B24EAB9C30093726A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3B952E7D24EABA240093726A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		3B952E7F24EABA7C0093726A /* PopularMoviesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesTab.swift; sourceTree = "<group>"; };
 		3B952E8124EABAA80093726A /* FavoriteMoviesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesTab.swift; sourceTree = "<group>"; };
 		3B952E8324EABD8D0093726A /* PopularMovieTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableRow.swift; sourceTree = "<group>"; };
-		3B952E8524EAC1FB0093726A /* KingfisherSwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KingfisherSwiftUI.framework; path = Carthage/Build/iOS/KingfisherSwiftUI.framework; sourceTree = "<group>"; };
 		3B952E8724EC2CC90093726A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		3B952E8B24EEADB90093726A /* DetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenView.swift; sourceTree = "<group>"; };
 		3B952E8D24EF18D80093726A /* SystemColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColors.swift; sourceTree = "<group>"; };
@@ -151,10 +123,6 @@
 		3BD352AB244E13CA00464A07 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		3BD352B0244E13CA00464A07 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		3BD352B1244E13CA00464A07 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		3BD352C8244E15E200464A07 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
-		3BD352CB244E19A000464A07 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		3BD352CE244E19A400464A07 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		3BD352D7244E1B1500464A07 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		3BD352DE244E1C1A00464A07 /* Services+External.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Services+External.swift"; sourceTree = "<group>"; };
 		3BD352DF244E1C1A00464A07 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3BD352E0244E1C1A00464A07 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -166,13 +134,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B5B34C92455AA44004B599A /* UIWindowTransitions.framework in Frameworks */,
-				3BD352CC244E19A000464A07 /* Realm.framework in Frameworks */,
+				3BC2D199259691C5007733F4 /* UIWindowTransitions in Frameworks */,
+				3B91FF92259695060072CC0C /* KingfisherSwiftUI in Frameworks */,
 				3B3AABD7244DB41200ADDDDB /* Core.framework in Frameworks */,
-				3BD352CF244E19A400464A07 /* RealmSwift.framework in Frameworks */,
-				3B952E8624EAC1FB0093726A /* KingfisherSwiftUI.framework in Frameworks */,
-				3B2F49C7245EB926008C6BD4 /* Kingfisher.framework in Frameworks */,
-				3BD352DA244E1B2100464A07 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,9 +144,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BD352D5244E1A6200464A07 /* Realm.framework in Frameworks */,
-				3BD352D8244E1B1500464A07 /* Alamofire.framework in Frameworks */,
-				3BD352D2244E1A5D00464A07 /* RealmSwift.framework in Frameworks */,
+				3BC2D190259652C7007733F4 /* RealmSwift in Frameworks */,
+				3BC2D19325968F70007733F4 /* Alamofire in Frameworks */,
+				3BC2D18E259652C7007733F4 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +217,6 @@
 				3B3AABC2244DB24A00ADDDDB /* LaunchScreen.storyboard */,
 				3B3AABC5244DB24A00ADDDDB /* Info.plist */,
 				3BD35286244DBD2200464A07 /* .sourcery.yml */,
-				3BD352C8244E15E200464A07 /* Cartfile */,
 			);
 			path = PopularMoviesSwiftUI;
 			sourceTree = "<group>";
@@ -400,12 +363,6 @@
 		3BD352CA244E19A000464A07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3B952E8524EAC1FB0093726A /* KingfisherSwiftUI.framework */,
-				3B2F49C6245EB926008C6BD4 /* Kingfisher.framework */,
-				3B5B34C82455AA44004B599A /* UIWindowTransitions.framework */,
-				3BD352D7244E1B1500464A07 /* Alamofire.framework */,
-				3BD352CE244E19A400464A07 /* RealmSwift.framework */,
-				3BD352CB244E19A000464A07 /* Realm.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -460,7 +417,6 @@
 				3B3AABAF244DB23F00ADDDDB /* Frameworks */,
 				3B3AABB0244DB23F00ADDDDB /* Resources */,
 				3B3AABDC244DB41200ADDDDB /* Embed Frameworks */,
-				3BD352D1244E19AF00464A07 /* carthage */,
 			);
 			buildRules = (
 			);
@@ -468,6 +424,10 @@
 				3B3AABD6244DB41200ADDDDB /* PBXTargetDependency */,
 			);
 			name = PopularMoviesSwiftUI;
+			packageProductDependencies = (
+				3BC2D198259691C5007733F4 /* UIWindowTransitions */,
+				3B91FF91259695060072CC0C /* KingfisherSwiftUI */,
+			);
 			productName = PopularMoviesTestApp;
 			productReference = 3B3AABB2244DB23F00ADDDDB /* PopularMoviesSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -481,13 +441,17 @@
 				3B3AABCC244DB41200ADDDDB /* Sources */,
 				3B3AABCD244DB41200ADDDDB /* Frameworks */,
 				3B3AABCE244DB41200ADDDDB /* Resources */,
-				3BD352D4244E1A5D00464A07 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Core;
+			packageProductDependencies = (
+				3BC2D18D259652C7007733F4 /* Realm */,
+				3BC2D18F259652C7007733F4 /* RealmSwift */,
+				3BC2D19225968F70007733F4 /* Alamofire */,
+			);
 			productName = Core;
 			productReference = 3B3AABD0244DB41200ADDDDB /* Core.framework */;
 			productType = "com.apple.product-type.framework";
@@ -519,6 +483,12 @@
 				Base,
 			);
 			mainGroup = 3B3AABA9244DB23F00ADDDDB;
+			packageReferences = (
+				3BE6571B25964EE2007EAE8A /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				3BC2D19125968F70007733F4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3BC2D197259691C5007733F4 /* XCRemoteSwiftPackageReference "UIWindowTransitions" */,
+				3BC2D19B25969292007733F4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 3B3AABB3244DB23F00ADDDDB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -534,7 +504,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BD352C9244E15E300464A07 /* Cartfile in Resources */,
 				3B3AABC4244DB24A00ADDDDB /* LaunchScreen.storyboard in Resources */,
 				3B2EF6AD249F5D03007D847E /* README.md in Resources */,
 				3B3AABC1244DB24A00ADDDDB /* Assets.xcassets in Resources */,
@@ -571,30 +540,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Sourcery/bin/sourcery --sources ./Core --templates ./Core/Templates/ --output ./Core/Generated\n\n";
-		};
-		3BD352D1244E19AF00464A07 /* carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/UIWindowTransitions.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/KingfisherSwiftUI.framework",
-			);
-			name = carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -929,6 +874,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3BC2D19125968F70007733F4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.1.0;
+			};
+		};
+		3BC2D197259691C5007733F4 /* XCRemoteSwiftPackageReference "UIWindowTransitions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/UIWindowTransitions.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		3BC2D19B25969292007733F4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.13.3;
+			};
+		};
+		3BE6571B25964EE2007EAE8A /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B91FF91259695060072CC0C /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BC2D19B25969292007733F4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+		3BC2D18D259652C7007733F4 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BE6571B25964EE2007EAE8A /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		3BC2D18F259652C7007733F4 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BE6571B25964EE2007EAE8A /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		3BC2D19225968F70007733F4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BC2D19125968F70007733F4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		3BC2D198259691C5007733F4 /* UIWindowTransitions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BC2D197259691C5007733F4 /* XCRemoteSwiftPackageReference "UIWindowTransitions" */;
+			productName = UIWindowTransitions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3B3AABAA244DB23F00ADDDDB /* Project object */;
 }

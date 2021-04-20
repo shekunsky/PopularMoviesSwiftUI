@@ -13,8 +13,8 @@ import Core
 struct PopularMoviesTab: View {
     
     @ObservedObject var model: PopularMoviesViewModel
-    @State private var selectedMovie: PopularMovie? = nil
-    @State private var showDetails: Bool = false
+    @State var selectedMovie: PopularMovie? = nil
+    @State var showDetails: Bool = false
     @State var needRefresh: Bool = false
     
     var body: some View {
@@ -44,12 +44,12 @@ struct PopularMoviesTab: View {
         }.onAppear() {
             UITableView.appearance().separatorStyle = .none
             self.model.getPopularMovies()
-        }.sheet(isPresented: $showDetails) {
-            DetailsScreenView(model: DetailsScreenViewModel(movieDetails: selectedMovie!,
+        }.sheet(item: $selectedMovie) { item in
+            DetailsScreenView(model: DetailsScreenViewModel(movieDetails: item,
                                                             isFavoriteMovie: model.checkIsFavoriteMovie(id: selectedMovie?.id ?? 0),
                                                             useCases: model.useCases,
                                                             action: {
-                                                                model.favoriteActionWith(movie: selectedMovie!)
+                                                                model.favoriteActionWith(movie: item)
                                                                 
             }), needRefresh: self.$needRefresh)
         }.padding(.top)

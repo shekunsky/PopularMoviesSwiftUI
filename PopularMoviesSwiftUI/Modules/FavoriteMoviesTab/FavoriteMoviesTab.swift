@@ -13,23 +13,23 @@ import Core
 struct FavoriteMoviesTab: View {
     
     @ObservedObject var model: FavoriteMoviesViewModel
-    @State private var selectedMovie: PopularMovie? = nil
-    @State private var showDetails: Bool = false
+    @State var selectedMovie: PopularMovie? = nil
+    @State var showDetails: Bool = false
     @State var needRefresh: Bool = false
     
     var body: some View {
         List {
             ForEach(model.popularMovies, id: \.self) { movie in
-                PopularMovieTableRow(posterPath: self.model.fullPathToThumbnailFrom(path: movie.poster_path),
+                PopularMovieTableRow(posterPath: model.fullPathToThumbnailFrom(path: movie.poster_path),
                                      title: movie.title,
                                      description: movie.overview,
-                                     isFavorite: self.model.checkIsFavoriteMovie(id: movie.id ?? 0),
+                                     isFavorite: model.checkIsFavoriteMovie(id: movie.id ?? 0),
                                      isPreloading: false) {
                                         // FavoriteAction
-                                        self.model.favoriteActionWith(movie: movie)
+                                        model.favoriteActionWith(movie: movie)
                 }.onTapGesture {
-                    self.selectedMovie = movie
-                    self.showDetails.toggle()
+                    selectedMovie = movie
+                    showDetails.toggle()
                 }
             }
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
@@ -38,15 +38,15 @@ struct FavoriteMoviesTab: View {
             
         }.onAppear() {
             UITableView.appearance().separatorStyle = .none
-            self.model.getPopularMovies()
-        }.sheet(isPresented: $showDetails) {
-            DetailsScreenView(model: DetailsScreenViewModel(movieDetails: self.selectedMovie!,
-                                                            isFavoriteMovie: self.model.checkIsFavoriteMovie(id: self.selectedMovie?.id ?? 0),
-                                                            useCases: self.model.useCases,
+            model.getPopularMovies()
+        }.sheet(item: $selectedMovie) { item in
+            DetailsScreenView(model: DetailsScreenViewModel(movieDetails: item,
+                                                            isFavoriteMovie: model.checkIsFavoriteMovie(id: selectedMovie?.id ?? 0),
+                                                            useCases: model.useCases,
                                                             action: {
-                                                                self.model.favoriteActionWith(movie: self.selectedMovie!)
+                                                                model.favoriteActionWith(movie: item)
                                                                 
-            }), needRefresh: self.$needRefresh)
+            }), needRefresh: $needRefresh)
         }.padding(.top)
     }
 }

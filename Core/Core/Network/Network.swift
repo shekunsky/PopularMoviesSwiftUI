@@ -2,8 +2,8 @@
 //  Network.swift
 //  Core
 //
-//  Created by Dima Shvets on 3/21/19.
-//  Copyright © 2019 Dmitry. All rights reserved.
+//  Created by Alex2 on 20.04.2020.
+//  Copyright © 2020 Alex2. All rights reserved.
 //
 
 import UIKit
@@ -22,16 +22,15 @@ final class Network: Networking {
         self.imagesEndPoint = imagesEndPoint
         self.thumbnailsEndPoint = thumbnailsEndPoint
     }
-
-    func getPopularMovies(for page: Int, complition: @escaping ([PopularMovie]?) -> Void) {
+    
+    func get<T: Decodable>(for page: Int, completion: @escaping (T?) -> Void) {
         let absolutePath = "\(apiEndPoint)\(page)"
-        AF.request(absolutePath).validate().responseDecodable(of: PopularMoviesResult.self) { (response) in
+        AF.request(absolutePath).validate().responseDecodable(of: T.self) { (response) in
             guard let result = response.value else {
-                complition(nil)
+                completion(nil)
                 return
             }
-            let movies = result.results
-            complition(movies)
+            completion(result)
         }
     }
     

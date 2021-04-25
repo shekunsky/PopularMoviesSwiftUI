@@ -21,7 +21,7 @@ protocol FavoriteMoviesOperable: AbstractDatabase {
 final class Database: FavoriteMoviesOperable {
     private let configuration: Realm.Configuration
     private var realm: Realm {
-        return try! Realm(configuration: self.configuration)
+        return try! Realm(configuration: configuration)
     }
     init(configuration: Realm.Configuration) {
         self.configuration = configuration

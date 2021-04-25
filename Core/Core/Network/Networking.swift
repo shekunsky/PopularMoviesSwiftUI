@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol Networking {
-    func getPopularMovies(for page: Int, complition: @escaping ([PopularMovie]?) -> Void)
+    func get<T: Decodable>(for page: Int, completion: @escaping (T?) -> Void)
     func fullPathToImageFrom(path: String?) -> String?
     func fullPathToThumbnailFrom(path: String?) -> String?
 }

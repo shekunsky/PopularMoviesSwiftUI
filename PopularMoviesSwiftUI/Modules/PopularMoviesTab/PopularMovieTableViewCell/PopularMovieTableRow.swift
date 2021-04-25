@@ -13,7 +13,7 @@ struct PopularMovieTableRow: View {
     var posterPath: String?
     var title: String?
     var description: String?
-    @State var isFavorite: Bool = false
+    @Binding var isFavorite: Bool
     @State var isPreloading: Bool = false
     var favoriteAction: (()->())? = nil
     
@@ -60,7 +60,7 @@ struct PopularMovieTableRow: View {
                     }.layoutPriority(1)
                     
                     Button(action: {
-                        self.favoriteAction?()
+                        favoriteAction?()
                     }) {
                         Image(systemName: "star.fill")
                             .renderingMode(.template)
@@ -81,7 +81,7 @@ struct PopularMovieTableRow_Previews: PreviewProvider {
         PopularMovieTableRow(posterPath: "https://github.com/onevcat/Kingfisher/blob/master/images/kingfisher-1.jpg?raw=true",
                              title: "Test movie Title",
                              description: "Description of Test Movie\n2-nd line\n3-rd line\n4-line",
-                             isFavorite: true,
+                             isFavorite: Binding.constant(true),
                              isPreloading: false,
                              favoriteAction: nil)
     }

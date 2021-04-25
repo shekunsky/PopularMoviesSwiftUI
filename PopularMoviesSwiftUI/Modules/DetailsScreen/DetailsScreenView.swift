@@ -38,9 +38,9 @@ struct DetailsScreenView: View {
     private var actionButton: some View {
         if model.isFavoriteMovie {
             return Button(action: {
-                self.model.makeActionOnMovie()
-                self.needRefresh.toggle()
-                self.presentationMode.wrappedValue.dismiss()
+                model.makeActionOnMovie()
+                needRefresh.toggle()
+                presentationMode.wrappedValue.dismiss()
             }) {
                 Text("REMOVE FROM FAVORITE")
             }
@@ -50,9 +50,9 @@ struct DetailsScreenView: View {
             .background(Color(UIColor.red))
         } else {
             return Button(action: {
-                self.model.makeActionOnMovie()
-                self.needRefresh.toggle()
-                self.presentationMode.wrappedValue.dismiss()
+                model.makeActionOnMovie()
+                needRefresh.toggle()
+                presentationMode.wrappedValue.dismiss()
             }) {
                 Text("ADD TO FAVORITE")
             }
@@ -68,7 +68,7 @@ struct DetailsScreenView: View {
             //Close button
             HStack{
                 Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     Image(systemName: "multiply.circle.fill")
                         .renderingMode(.template)

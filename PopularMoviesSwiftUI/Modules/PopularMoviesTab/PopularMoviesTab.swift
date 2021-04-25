@@ -23,10 +23,10 @@ struct PopularMoviesTab: View {
                 PopularMovieTableRow(posterPath: model.fullPathToThumbnailFrom(path: movie.poster_path),
                                      title: movie.title,
                                      description: movie.overview,
-                                     isFavorite: model.checkIsFavoriteMovie(id: movie.id ?? 0),
+                                     isFavorite: Binding.constant(model.checkIsFavoriteMovie(id: movie.id ?? 0)) ,
                                      isPreloading: false) {
-                                        // FavoriteAction
-                                        model.favoriteActionWith(movie: movie)
+                    // FavoriteAction
+                    model.favoriteActionWith(movie: movie)
                 }.onTapGesture {
                     selectedMovie = movie
                     showDetails.toggle()
@@ -37,21 +37,21 @@ struct PopularMoviesTab: View {
             .background(Color.systemBackground)
             
             // Preloading
-            PopularMovieTableRow(posterPath: nil, title: nil, description: nil, isFavorite: false, isPreloading: true, favoriteAction: nil).onAppear {
+            PopularMovieTableRow(posterPath: nil, title: nil, description: nil, isFavorite: Binding.constant(false), isPreloading: true, favoriteAction: nil).onAppear {
                 // Load next page
-                self.model.getPopularMovies()
+                model.getPopularMovies()
             }
         }.onAppear() {
             UITableView.appearance().separatorStyle = .none
-            self.model.getPopularMovies()
+            model.getPopularMovies()
         }.sheet(item: $selectedMovie) { item in
             DetailsScreenView(model: DetailsScreenViewModel(movieDetails: item,
-                                                            isFavoriteMovie: model.checkIsFavoriteMovie(id: selectedMovie?.id ?? 0),
+                                                            isFavoriteMovie: model.checkIsFavoriteMovie(id: item.id ?? 0),
                                                             useCases: model.useCases,
                                                             action: {
                                                                 model.favoriteActionWith(movie: item)
                                                                 
-            }), needRefresh: self.$needRefresh)
+                                                            }), needRefresh: $needRefresh)
         }.padding(.top)
     }
 }

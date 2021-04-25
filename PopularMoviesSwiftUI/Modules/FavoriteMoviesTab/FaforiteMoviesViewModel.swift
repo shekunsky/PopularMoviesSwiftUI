@@ -10,6 +10,7 @@ import Core
 import SwiftUI
 
 final class FavoriteMoviesViewModel: BaseViewModel, ObservableObject {
+    @Published var needToRefresh: Bool = false
     
     override var maxMoviesToDownload: Int { popularMovies.count }
     
@@ -24,6 +25,7 @@ final class FavoriteMoviesViewModel: BaseViewModel, ObservableObject {
             useCases.movies.addToFavorites(movie: movie)
             setFavorite(state: true, for: movie.id)
         }
+        needToRefresh.toggle()
     }
     
     override func getPopularMovies() {

@@ -10,7 +10,7 @@ import UIKit
 
 public protocol MoviesUseCase: AutoUseCaseProvider {
     //Network
-    func getPopularMoviesList(for page: Int, complition: @escaping ([PopularMovie]?) -> Void)
+    func getPopularMoviesList(for page: Int, completion: @escaping ([PopularMovie]?) -> Void)
     func fullPathToImageFrom(path: String?) -> String?
     func fullPathToThumbnailFrom(path: String?) -> String?
     

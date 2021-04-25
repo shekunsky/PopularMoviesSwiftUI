@@ -23,10 +23,10 @@ struct FavoriteMoviesTab: View {
                 PopularMovieTableRow(posterPath: model.fullPathToThumbnailFrom(path: movie.poster_path),
                                      title: movie.title,
                                      description: movie.overview,
-                                     isFavorite: model.checkIsFavoriteMovie(id: movie.id ?? 0),
+                                     isFavorite: Binding.constant(model.checkIsFavoriteMovie(id: movie.id ?? 0)),
                                      isPreloading: false) {
-                                        // FavoriteAction
-                                        model.favoriteActionWith(movie: movie)
+                    // FavoriteAction
+                    model.favoriteActionWith(movie: movie)
                 }.onTapGesture {
                     selectedMovie = movie
                     showDetails.toggle()
@@ -41,12 +41,12 @@ struct FavoriteMoviesTab: View {
             model.getPopularMovies()
         }.sheet(item: $selectedMovie) { item in
             DetailsScreenView(model: DetailsScreenViewModel(movieDetails: item,
-                                                            isFavoriteMovie: model.checkIsFavoriteMovie(id: selectedMovie?.id ?? 0),
+                                                            isFavoriteMovie: model.checkIsFavoriteMovie(id: item.id ?? 0),
                                                             useCases: model.useCases,
                                                             action: {
                                                                 model.favoriteActionWith(movie: item)
                                                                 
-            }), needRefresh: $needRefresh)
+                                                            }), needRefresh: $needRefresh)
         }.padding(.top)
     }
 }

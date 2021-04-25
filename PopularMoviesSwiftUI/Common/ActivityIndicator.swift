@@ -29,7 +29,7 @@ struct ActivityIndicator: View {
         }
         .aspectRatio(1, contentMode: .fit)
         .onAppear {
-            self.isAnimating = true
+            isAnimating = true
         }
     }
 }

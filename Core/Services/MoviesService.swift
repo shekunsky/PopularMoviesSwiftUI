@@ -17,9 +17,11 @@ final class MoviesService: NSObject, MoviesUseCase {
         database = context.database
         super.init()
     }
-    func getPopularMoviesList(for page: Int, complition: @escaping ([PopularMovie]?) -> Void) {
-        network.getPopularMovies(for: page) { (response) in
-            complition(response)
+    
+    func getPopularMoviesList(for page: Int, completion: @escaping ([PopularMovie]?) -> Void) {
+        network.get(for: page) { (result: PopularMoviesResult?) in
+            let movies: [PopularMovie]? = result?.results
+            completion(movies)
         }
     }
 

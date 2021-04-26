@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol UseCasesConsumer: class {
+public protocol UseCasesConsumer: AnyObject {
     associatedtype UseCases
     var useCases: UseCases { get set }
 }

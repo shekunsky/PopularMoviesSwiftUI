@@ -27,6 +27,7 @@ struct AppView: View {
                     Text("Favorite")
                 }
         }
+        .accentColor(.blue)
     }
 }
 

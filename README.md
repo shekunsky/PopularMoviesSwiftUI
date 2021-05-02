@@ -91,9 +91,9 @@
 
 
 ## Requirements
-Xcode 12.5
-IOS 14
-MacOS 11
+* Xcode 12.5
+* IOS 14
+* MacOS 11
 
 
 ## License

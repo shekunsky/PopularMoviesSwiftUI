@@ -46,10 +46,12 @@ struct PopularMovieTableRow: View {
                 } else {
                     poster
                     
+                    Spacer()
+                    
                     VStack(alignment: .center) {
                         Text(title ?? "")
                             .font(.system(size: 17))
-                            .fontWeight(.semibold)
+                            .fontWeight(.bold)
                             .padding(5)
                             .lineLimit(1)
                         
@@ -58,6 +60,8 @@ struct PopularMovieTableRow: View {
                             .italic()
                             .lineLimit(3)
                     }.layoutPriority(1)
+                    
+                    Spacer()
                     
                     Button(action: {
                         favoriteAction?()

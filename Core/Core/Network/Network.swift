@@ -6,7 +6,6 @@
 //  Copyright © 2020 Alex2. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 
 final class Network: Networking {

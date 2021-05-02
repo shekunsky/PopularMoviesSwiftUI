@@ -64,7 +64,7 @@
 ```swift
     public protocol MoviesUseCase: AutoUseCaseProvider {
         //Network
-        func getPopularMoviesList(for page: Int, completion: @escaping ([PopularMovie]?) -> Void)
+        func get<T: Decodable>(for page: Int, completion: @escaping (T?) -> Void)
         func fullPathToImageFrom(path: String?) -> String?
         func fullPathToThumbnailFrom(path: String?) -> String?
         
@@ -89,6 +89,11 @@
     func getPopularMovies() { }
 ```
 
+
+## Requirements
+Xcode 12.5
+IOS 14
+MacOS 11
 
 
 ## License

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B3AABB1244DB23F00ADDDDB"
+               BlueprintIdentifier = "3BFAD7B1263EA2700047E19C"
                BuildableName = "PopularMoviesSwiftUI.app"
-               BlueprintName = "PopularMoviesSwiftUI"
+               BlueprintName = "PopularMoviesSwiftUI (iOS)"
                ReferencedContainer = "container:PopularMoviesSwiftUI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B3AABB1244DB23F00ADDDDB"
+            BlueprintIdentifier = "3BFAD7B1263EA2700047E19C"
             BuildableName = "PopularMoviesSwiftUI.app"
-            BlueprintName = "PopularMoviesSwiftUI"
+            BlueprintName = "PopularMoviesSwiftUI (iOS)"
             ReferencedContainer = "container:PopularMoviesSwiftUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B3AABB1244DB23F00ADDDDB"
+            BlueprintIdentifier = "3BFAD7B1263EA2700047E19C"
             BuildableName = "PopularMoviesSwiftUI.app"
-            BlueprintName = "PopularMoviesSwiftUI"
+            BlueprintName = "PopularMoviesSwiftUI (iOS)"
             ReferencedContainer = "container:PopularMoviesSwiftUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

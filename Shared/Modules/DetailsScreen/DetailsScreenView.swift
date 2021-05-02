@@ -16,7 +16,7 @@ struct DetailsScreenView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var needRefresh: Bool
     
-    var widthForPoster: CGFloat = (UIScreen.main.bounds.width - 45)/2
+    var widthForPoster: CGFloat = (ScreenSize.deviceWidth - 45)/2
     let fontSize: CGFloat = 17
     
     private var poster: some View {
@@ -47,7 +47,7 @@ struct DetailsScreenView: View {
             .buttonStyle(PlainButtonStyle())
             .frame(minWidth: 200, maxWidth: .infinity, minHeight: 40)
             .foregroundColor(.white)
-            .background(Color(UIColor.red))
+            .background(Color.systemRed)
         } else {
             return Button(action: {
                 model.makeActionOnMovie()

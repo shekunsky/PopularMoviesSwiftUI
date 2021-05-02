@@ -71,8 +71,8 @@ struct PopularMovieTableRow: View {
                 }
             }
             //Separator
-            Color.black.frame(height:CGFloat(2) / UIScreen.main.scale)
-        }
+            Color.secondaryLabel.frame(height:CGFloat(2) / ScreenSize.screenScale)
+        }.background(Color.clear)
     }
 }
 

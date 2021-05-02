@@ -6,8 +6,6 @@
 //  Copyright © 2020 Alex2. All rights reserved.
 //
 
-import UIKit
-
 public protocol MoviesUseCase: AutoUseCaseProvider {
     //Network
     func getPopularMoviesList(for page: Int, completion: @escaping ([PopularMovie]?) -> Void)

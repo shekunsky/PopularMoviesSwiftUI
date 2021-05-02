@@ -6,8 +6,6 @@
 //  Copyright © 2020 Alex2. All rights reserved.
 //
 
-import UIKit
-
 final class MoviesService: NSObject, MoviesUseCase {
     let network: Networking
     let database: FavoriteMoviesOperable

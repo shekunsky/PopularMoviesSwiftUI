@@ -6,15 +6,12 @@
 //
 
 import SwiftUI
-import Core
 
 @main
 struct PopularMoviesSwiftUIApp: App {
-    var useCases = Services(environment: AppEnvironment.development(.normal))
-    
     var body: some Scene {
         WindowGroup {
-            AppView().environmentObject(useCases)
+            ContentView()
         }
     }
 }

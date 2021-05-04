@@ -14,7 +14,6 @@ struct DetailsScreenView: View {
     
     @ObservedObject var model: DetailsScreenViewModel
     @Environment(\.presentationMode) var presentationMode
-    @Binding var needRefresh: Bool
     
     var widthForPoster: CGFloat = (ScreenSize.deviceWidth - 45)/2
     let fontSize: CGFloat = 17
@@ -28,18 +27,17 @@ struct DetailsScreenView: View {
                     .scaledToFit()
                     .frame(width: 80, height: 80)
                     .opacity(0.3)
-        }
-        .resizable()
-        .scaledToFit()
-        .frame(width: widthForPoster, height: widthForPoster*1.5)
-        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+            }
+            .resizable()
+            .scaledToFit()
+            .frame(width: widthForPoster, height: widthForPoster*1.5)
+            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
     }
     
     private var actionButton: some View {
         if model.isFavoriteMovie {
             return Button(action: {
                 model.makeActionOnMovie()
-                needRefresh.toggle()
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("REMOVE FROM FAVORITE")
@@ -51,7 +49,6 @@ struct DetailsScreenView: View {
         } else {
             return Button(action: {
                 model.makeActionOnMovie()
-                needRefresh.toggle()
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("ADD TO FAVORITE")
@@ -181,21 +178,21 @@ struct DetailsScreenView: View {
 struct DetailsScreenView_Previews: PreviewProvider {
     static var previews: some View {
         DetailsScreenView(model: DetailsScreenViewModel(
-            movieDetails: PopularMovie(poster_path: "https://github.com/onevcat/Kingfisher/blob/master/images/kingfisher-1.jpg?raw=true",
-                                       adult: false,
-                                       overview: "Overview",
-                                       release_date: "Date",
-                                       genre_ids: nil,
-                                       id: 1,
-                                       original_title: "original_title",
-                                       original_language: "Eng",
-                                       title: "Title",
-                                       backdrop_path: "",
-                                       popularity: 100,
-                                       vote_count: 11,
-                                       video: false,
-                                       vote_average: 6),
-            isFavoriteMovie: false,
-            useCases: Services(environment: AppEnvironment.development(.normal)), action: nil), needRefresh: .constant(false))
+                            movieDetails: PopularMovie(poster_path: "https://github.com/onevcat/Kingfisher/blob/master/images/kingfisher-1.jpg?raw=true",
+                                                       adult: false,
+                                                       overview: "Overview",
+                                                       release_date: "Date",
+                                                       genre_ids: nil,
+                                                       id: 1,
+                                                       original_title: "original_title",
+                                                       original_language: "Eng",
+                                                       title: "Title",
+                                                       backdrop_path: "",
+                                                       popularity: 100,
+                                                       vote_count: 11,
+                                                       video: false,
+                                                       vote_average: 6),
+                            isFavoriteMovie: false,
+                            useCases: Services(environment: AppEnvironment.development(.normal)), action: nil)/*, needRefresh: .constant(false)*/)
     }
 }

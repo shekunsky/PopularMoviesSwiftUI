@@ -24,7 +24,7 @@ class ScreenSize{
     static var screenScale: CGFloat = UIScreen.main.scale
     #elseif os(macOS)
     static var deviceWidth: CGFloat = NSScreen.main?.visibleFrame.size.width ?? 0
-    static var screenScale: CGFloat = NSScreen.main?.backingScaleFactor ?? 0
+    static var screenScale: CGFloat = NSScreen.main?.backingScaleFactor ?? 1
     #endif
 }
 

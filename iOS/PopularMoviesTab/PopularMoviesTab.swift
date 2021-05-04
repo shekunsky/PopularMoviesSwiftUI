@@ -15,7 +15,6 @@ struct PopularMoviesTab: View {
     @ObservedObject var model: PopularMoviesViewModel
     @State var selectedMovie: PopularMovie? = nil
     @State var showDetails: Bool = false
-    @State var needRefresh: Bool = false
     
     var body: some View {
         List {
@@ -27,7 +26,8 @@ struct PopularMoviesTab: View {
                                      isPreloading: false) {
                     // FavoriteAction
                     model.favoriteActionWith(movie: movie)
-                }.onTapGesture {
+                }
+                .onTapGesture {
                     selectedMovie = movie
                     showDetails.toggle()
                 }
@@ -41,18 +41,21 @@ struct PopularMoviesTab: View {
                 // Load next page
                 model.getPopularMovies()
             }
-        }.onAppear() {
+        }
+        .onAppear() {
             UITableView.appearance().separatorStyle = .none
             model.getPopularMovies()
-        }.sheet(item: $selectedMovie) { item in
+        }
+        .sheet(item: $selectedMovie) { item in
             DetailsScreenView(model: DetailsScreenViewModel(movieDetails: item,
                                                             isFavoriteMovie: model.checkIsFavoriteMovie(id: item.id ?? 0),
                                                             useCases: model.useCases,
                                                             action: {
                                                                 model.favoriteActionWith(movie: item)
                                                                 
-                                                            }), needRefresh: $needRefresh)
-        }.padding(.top)
+                                                            }))
+        }
+        .padding(.top)
     }
 }
 

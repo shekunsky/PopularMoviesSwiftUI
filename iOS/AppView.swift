@@ -20,12 +20,14 @@ struct AppView: View {
                     Image(systemName: "video.fill").font(.system(size: 22))
                     Text("Popular")
                 }
-
+                .tag(NavigationItem.all)
+            
             FavoriteMoviesTab(model: FavoriteMoviesViewModel(useCases: useCases))
                 .tabItem {
                     Image(systemName: "star.fill").font(.system(size: 22))
-                    Text("Favorite")
+                    Text("Favorites")
                 }
+                .tag(NavigationItem.favorites)
         }
         .accentColor(.blue)
     }

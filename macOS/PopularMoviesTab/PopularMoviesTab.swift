@@ -13,44 +13,49 @@ import Core
 struct PopularMoviesTab: View {
     
     @ObservedObject var model: PopularMoviesViewModel
-    @State var selectedMovie: PopularMovie? = nil
-    @State var showDetails: Bool = false
-    @State var needRefresh: Bool = false
+    @State private var selectedMovie: PopularMovie? = nil
     
     var body: some View {
-        List {
+        List(selection: $selectedMovie) {
             ForEach(model.popularMovies, id: \.self) { movie in
-                PopularMovieTableRow(posterPath: model.fullPathToThumbnailFrom(path: movie.poster_path),
-                                     title: movie.title,
-                                     description: movie.overview,
-                                     isFavorite: Binding.constant(model.checkIsFavoriteMovie(id: movie.id ?? 0)) ,
-                                     isPreloading: false) {
-                    // FavoriteAction
-                    model.favoriteActionWith(movie: movie)
-                }.onTapGesture {
-                    selectedMovie = movie
-                    showDetails.toggle()
+                NavigationLink(
+                    destination: DetailsScreenView(model: DetailsScreenViewModel(movieDetails: movie,
+                                                                                 isFavoriteMovie: model.checkIsFavoriteMovie(id: movie.id ?? 0),
+                                                                                 useCases: model.useCases,
+                                                                                 action: {
+                                                                                    model.favoriteActionWith(movie: movie)
+                                                                                 })),
+                    tag: movie,
+                    selection: $selectedMovie
+                ) {
+                    PopularMovieTableRow(posterPath: model.fullPathToThumbnailFrom(path: movie.poster_path),
+                                         title: movie.title,
+                                         description: movie.overview,
+                                         isFavorite: Binding.constant(model.checkIsFavoriteMovie(id: movie.id ?? 0)) ,
+                                         isPreloading: false) {
+                        // FavoriteAction
+                        model.favoriteActionWith(movie: movie)
+                    }
                 }
+                .tag(movie)
             }
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
             .listRowInsets(EdgeInsets())
             .background(Color.clear)
-            
             // Preloading
             PopularMovieTableRow(posterPath: nil, title: nil, description: nil, isFavorite: Binding.constant(false), isPreloading: true, favoriteAction: nil).onAppear {
                 // Load next page
                 model.getPopularMovies()
             }
-        }.onAppear() {
+        }
+        .navigationTitle("Movies")
+        .frame(minWidth: 400)
+        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+        .listRowInsets(EdgeInsets())
+        .background(Color.clear)
+        .onAppear() {
             model.getPopularMovies()
-        }.sheet(item: $selectedMovie) { item in
-            DetailsScreenView(model: DetailsScreenViewModel(movieDetails: item,
-                                                            isFavoriteMovie: model.checkIsFavoriteMovie(id: item.id ?? 0),
-                                                            useCases: model.useCases,
-                                                            action: {
-                                                                model.favoriteActionWith(movie: item)
-                                                            }), needRefresh: $needRefresh)
-        }.padding(.top)
+        }
     }
 }
 

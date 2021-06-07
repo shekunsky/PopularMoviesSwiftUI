@@ -11,15 +11,9 @@ import Alamofire
 final class Network: Networking {
     
     private let apiEndPoint: String
-    private let imagesEndPoint: String
-    private let thumbnailsEndPoint: String
     
-    init(apiEndPoint: String,
-         imagesEndPoint: String,
-         thumbnailsEndPoint: String) {
+    init(apiEndPoint: String) {
         self.apiEndPoint = apiEndPoint
-        self.imagesEndPoint = imagesEndPoint
-        self.thumbnailsEndPoint = thumbnailsEndPoint
     }
     
     func get<T: Decodable>(for page: Int, completion: @escaping (T?) -> Void) {
@@ -31,15 +25,5 @@ final class Network: Networking {
             }
             completion(result)
         }
-    }
-    
-    func fullPathToImageFrom(path: String?) -> String? {
-        guard let endPath = path else { return nil }
-        return  "\(imagesEndPoint)\(endPath)"
-    }
-    
-    func fullPathToThumbnailFrom(path: String?) -> String? {
-        guard let endPath = path else { return nil }
-        return  "\(thumbnailsEndPoint)\(endPath)"
     }
 }

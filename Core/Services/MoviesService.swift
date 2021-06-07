@@ -10,9 +10,16 @@ final class MoviesService: NSObject, MoviesUseCase {
     let network: Networking
     let database: FavoriteMoviesOperable
     
-    public init (context: Context) {
+    private let imagesEndPoint: String
+    private let thumbnailsEndPoint: String
+    
+    public init (context: Context,
+                 environment: AppEnvironment) {
         network = context.networking
         database = context.database
+        imagesEndPoint = environment.imagesURLAddress
+        thumbnailsEndPoint = environment.thumbnailURLAddress
+        
         super.init()
     }
     
@@ -24,11 +31,13 @@ final class MoviesService: NSObject, MoviesUseCase {
     }
 
     func fullPathToImageFrom(path: String?) -> String? {
-        network.fullPathToImageFrom(path: path)
+        guard let endPath = path else { return nil }
+        return  "\(imagesEndPoint)\(endPath)"
     }
     
     func fullPathToThumbnailFrom(path: String?) -> String? {
-        network.fullPathToThumbnailFrom(path: path)
+        guard let endPath = path else { return nil }
+        return  "\(thumbnailsEndPoint)\(endPath)"
     }
     
     func checkIsFavoriteMovie(id: Int) -> Bool {

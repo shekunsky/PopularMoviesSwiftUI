@@ -10,19 +10,20 @@ import Foundation
 
 final public class Services: UseCasesProvider, ObservableObject {
     
-   private let context: Context
+    private let context: Context
+    private let environment: AppEnvironment
 
     // Services
-    private lazy var moviesService = MoviesService(context: context)
+    private lazy var moviesService = MoviesService(context: context, environment: environment)
 
     // Services Gateways
     public var movies: MoviesUseCase { return moviesService }
 
     public init(environment: AppEnvironment) {
+        self.environment = environment
+        
         Services.setupServices(environment: environment)
-        let network = Network(apiEndPoint: environment.baseURLAddress,
-                              imagesEndPoint: environment.imagesURLAddress,
-                              thumbnailsEndPoint: environment.thumbnailURLAddress)
+        let network = Network(apiEndPoint: environment.baseURLAddress)
         let database = Database(configuration: .defaultConfiguration)
         self.context = Context(environment: environment,
                                networking: network,

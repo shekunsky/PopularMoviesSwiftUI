@@ -12,6 +12,8 @@ import Foundation
 import UIKit
 #elseif os(macOS)
 import AppKit
+#elseif os(tvOS)
+import TVUIKit
 #endif
 
 
@@ -25,6 +27,10 @@ class ScreenSize{
     #elseif os(macOS)
     static var deviceWidth: CGFloat = NSScreen.main?.visibleFrame.size.width ?? 0
     static var screenScale: CGFloat = NSScreen.main?.backingScaleFactor ?? 1
+    #elseif os(tvOS)
+    static var deviceWidth: CGFloat = UIScreen.main.bounds.size.width
+    static var deviceHeight: CGFloat = UIScreen.main.bounds.size.height
+    static var screenScale: CGFloat = UIScreen.main.scale
     #endif
 }
 

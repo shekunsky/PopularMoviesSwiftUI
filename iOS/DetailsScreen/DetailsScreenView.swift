@@ -12,10 +12,18 @@ import KingfisherSwiftUI
 
 struct DetailsScreenView: View {
     
+    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    
     @ObservedObject var model: DetailsScreenViewModel
     @Environment(\.presentationMode) var presentationMode
     
-    var widthForPoster: CGFloat = (ScreenSize.deviceWidth - 45)/2
+    var widthForPoster: CGFloat {
+        if idiom == .pad {
+            return (ScreenSize.deviceWidth - 350)/2
+        } else {
+            return (ScreenSize.deviceWidth - 45)/2
+        }
+    }
     let fontSize: CGFloat = 17
     
     private var poster: some View {

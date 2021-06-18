@@ -30,6 +30,7 @@ struct AppView: View {
                 .tag(NavigationItem.favorites)
         }
         .accentColor(.blue)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

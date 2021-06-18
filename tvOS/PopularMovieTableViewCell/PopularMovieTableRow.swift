@@ -69,10 +69,11 @@ struct PopularMovieTableRow: View {
                             .foregroundColor(isFavorite ? favoriteColor : commonColor)
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 10))
                     }
-                    .frame(width: imageWidth*1.3, height: imageHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: imageWidth*1.5, height: imageHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
             }.padding()
-        }.background(Color.clear)
+        }
+        .background(Color.clear)
     }
 }
 

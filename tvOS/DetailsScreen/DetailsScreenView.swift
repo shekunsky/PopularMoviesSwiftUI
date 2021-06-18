@@ -15,8 +15,8 @@ struct DetailsScreenView: View {
     @ObservedObject var model: DetailsScreenViewModel
     @Environment(\.presentationMode) var presentationMode
     
-    var widthForPoster: CGFloat = (ScreenSize.deviceWidth - 40)/2
-    var heightForPoster: CGFloat = (ScreenSize.deviceHeight/2)
+    var widthForPoster: CGFloat = 300
+    var heightForPoster: CGFloat = 400
     let fontSize: CGFloat = 25
     
     private var poster: some View {
@@ -26,7 +26,7 @@ struct DetailsScreenView: View {
                 Image(systemName: "photo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 80, height: 80)
+                    .frame(width: widthForPoster, height: heightForPoster)
                     .opacity(0.3)
             }
             .resizable()
@@ -42,9 +42,11 @@ struct DetailsScreenView: View {
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("REMOVE FROM FAVORITE")
+                    .padding()
+                    .background(Color.systemRed)
             }
-            .buttonStyle(PlainButtonStyle())
-            .frame(minWidth: 200, maxWidth: .infinity, minHeight: 40)
+            .buttonStyle(CardButtonStyle())
+            .padding(.horizontal)
             .foregroundColor(.white)
             .background(Color.systemRed)
         } else {
@@ -53,40 +55,41 @@ struct DetailsScreenView: View {
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("ADD TO FAVORITE")
+                    .padding()
+                    .background(Color.systemGreen)
             }
-            .buttonStyle(PlainButtonStyle())
-            .frame(minWidth: 200, maxWidth: .infinity, minHeight: 40)
+            .buttonStyle(CardButtonStyle())
+            .padding(.horizontal)
             .foregroundColor(.white)
             .background(Color.systemGreen)
         }
     }
     
     var body: some View {
-            LazyVStack(alignment: .center) {
+        LazyVStack(alignment: .center) {
             
             //Title
             Text(model.movieDetails.title ?? "")
                 .font(.system(size: 50))
-//                .foregroundColor(.green)
+                .foregroundColor(.blue)
                 .fontWeight(.semibold)
-                .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
+                .padding(EdgeInsets(top: 50, leading: 15, bottom: 0, trailing: 15))
                 .fixedSize(horizontal: false, vertical: true)
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
             
             //Poster and Description
-            HStack {
-                Spacer()
+            HStack(alignment: .center, spacing: nil, content: {
                 poster
                 
                 Text(model.movieDetails.overview ?? "")
                     .font(.system(size: 25))
-//                    .foregroundColor(.green)
+                    .foregroundColor(.label)
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 5, trailing: 10))
-                    .frame(width: widthForPoster, height: heightForPoster, alignment: .top)
+                    .frame(width: 3*widthForPoster, height: heightForPoster, alignment: .top)
                     .fixedSize(horizontal: true, vertical: false)
                     .lineLimit(nil)
-            }
+            })
             
             // Info
             HStack {
@@ -165,7 +168,7 @@ struct DetailsScreenView: View {
                 Spacer(minLength: 30)
             }
             Spacer()
-        }
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 
@@ -188,7 +191,7 @@ struct DetailsScreenView_Previews: PreviewProvider {
                                                            video: false,
                                                            vote_average: 6),
                                 isFavoriteMovie: false,
-                                useCases: Services(environment: AppEnvironment.development(.normal)), action: nil)/*, needRefresh: .constant(false)*/)
+                                useCases: Services(environment: AppEnvironment.development(.normal)), action: nil))
             DetailsScreenView(model: DetailsScreenViewModel(
                                 movieDetails: PopularMovie(poster_path: "https://github.com/onevcat/Kingfisher/blob/master/images/kingfisher-1.jpg?raw=true",
                                                            adult: false,
@@ -205,7 +208,7 @@ struct DetailsScreenView_Previews: PreviewProvider {
                                                            video: false,
                                                            vote_average: 6),
                                 isFavoriteMovie: false,
-                                useCases: Services(environment: AppEnvironment.development(.normal)), action: nil)/*, needRefresh: .constant(false)*/)
+                                useCases: Services(environment: AppEnvironment.development(.normal)), action: nil))
         }
     }
 }

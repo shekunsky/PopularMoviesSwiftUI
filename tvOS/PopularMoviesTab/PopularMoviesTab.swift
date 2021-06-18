@@ -54,12 +54,12 @@ struct PopularMoviesTab: View {
                         // Load next page
                         model.getPopularMovies()
                     }
-                }
+                }.padding(.top)
             }
             .onAppear() {
                 model.getPopularMovies()
             }
-        }.navigationBarHidden(false)
+        }.navigationBarHidden(true)
         .background(TabBarAccessor { tabbar in
             self.tabBar = tabbar
         })

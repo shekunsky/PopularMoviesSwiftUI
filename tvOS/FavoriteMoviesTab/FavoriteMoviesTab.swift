@@ -48,12 +48,12 @@ struct FavoriteMoviesTab: View {
                         }.buttonStyle(PlainButtonStyle())
                     }
                     .background(Color.systemBackground)
-                }
+                }.padding(.top)
             }
             .onAppear() {
                 model.getPopularMovies()
             }
-        }.navigationBarHidden(false)
+        }.navigationBarHidden(true)
         .background(TabBarAccessor { tabbar in
             self.tabBar = tabbar
         })

@@ -6,7 +6,11 @@
 //
 
 import SwiftUI
+#if os(watchOS)
+import Core_watchOS
+#else
 import Core
+#endif
 
 enum NavigationItem {
   case all

@@ -7,7 +7,7 @@
 
 
 #if os(watchOS)
-import Foundation
+import WatchKit
 #elseif os(iOS)
 import UIKit
 #elseif os(macOS)
@@ -20,7 +20,7 @@ import TVUIKit
 class ScreenSize{
     #if os(watchOS)
     static var deviceWidth: CGFloat = WKInterfaceDevice.current().screenBounds.size.width
-    static var screenScale: CGFloat = WKInterfaceDevice.current().scale
+    static var screenScale: CGFloat = WKInterfaceDevice.current().screenScale
     #elseif os(iOS)
     static var deviceWidth: CGFloat = UIScreen.main.bounds.size.width
     static var screenScale: CGFloat = UIScreen.main.scale

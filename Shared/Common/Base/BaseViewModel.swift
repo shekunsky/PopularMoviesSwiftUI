@@ -7,7 +7,11 @@
 //
 
 import SwiftUI
+#if os(watchOS)
+import Core_watchOS
+#else
 import Core
+#endif
 import Combine
 
 protocol PopularMoviesOperable {

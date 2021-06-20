@@ -6,7 +6,11 @@
 //  Copyright © 2020 Alex2. All rights reserved.
 //
 
+#if os(watchOS)
+import Core_watchOS
+#else
 import Core
+#endif
 import SwiftUI
 
 final class FavoriteMoviesViewModel: BaseViewModel, ObservableObject {

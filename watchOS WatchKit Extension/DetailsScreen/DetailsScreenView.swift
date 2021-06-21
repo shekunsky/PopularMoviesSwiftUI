@@ -16,7 +16,7 @@ struct DetailsScreenView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var widthForPoster: CGFloat { ScreenSize.deviceWidth - 100 }
-    let fontSize: CGFloat = 13
+    let fontSize: CGFloat = 12
     
     private var poster: some View {
         let url = URL(string: model.posterPath ?? "")
@@ -41,11 +41,11 @@ struct DetailsScreenView: View {
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("REMOVE FROM FAVORITE")
-                    .font(.system(size: 14))
-                    .fontWeight(.medium)
+                    .font(.system(size: 12))
+                    .fontWeight(.semibold)
             }
             .buttonStyle(PlainButtonStyle())
-            .frame(minWidth: 100, maxWidth: .infinity, minHeight: 40)
+            .frame(minWidth: 100, maxWidth: ScreenSize.deviceWidth, minHeight: 40)
             .foregroundColor(.white)
             .background(Color.systemRed)
         } else {
@@ -54,11 +54,11 @@ struct DetailsScreenView: View {
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("ADD TO FAVORITE")
-                    .font(.system(size: 14))
-                    .fontWeight(.medium)
+                    .font(.system(size: 12))
+                    .fontWeight(.semibold)
             }
             .buttonStyle(PlainButtonStyle())
-            .frame(minWidth: 100, maxWidth: .infinity, minHeight: 40)
+            .frame(minWidth: 100, maxWidth: ScreenSize.deviceWidth, minHeight: 40)
             .foregroundColor(.white)
             .background(Color.systemGreen)
         }
@@ -157,8 +157,8 @@ struct DetailsScreenView: View {
                 // Action Button
                 HStack {
                     actionButton
-                        .cornerRadius(20)
-                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+                        .cornerRadius(15)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                 }
             }
         }

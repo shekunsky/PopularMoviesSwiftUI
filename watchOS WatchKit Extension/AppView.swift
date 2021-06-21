@@ -21,8 +21,6 @@ struct AppView: View {
                     Text("Popular")
                 }
                 .tag(NavigationItem.all)
-                .edgesIgnoringSafeArea(.bottom)
-                .padding(.bottom, 0.1)
             
             FavoriteMoviesTab(model: FavoriteMoviesViewModel(useCases: useCases))
                 .tabItem {
@@ -30,8 +28,6 @@ struct AppView: View {
                     Text("Favorites")
                 }
                 .tag(NavigationItem.favorites)
-                .edgesIgnoringSafeArea(.bottom)
-                .padding(.bottom, 0.1)
         }
         .accentColor(.blue)
     }

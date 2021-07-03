@@ -16,6 +16,7 @@ struct PopularMovieTableRow: View {
     @Binding var isFavorite: Bool
     @State var isPreloading: Bool = false
     var favoriteAction: (()->())? = nil
+    var widthForText: CGFloat { ScreenSize.deviceWidth - posterHeight - 20 }
     
     let favoriteColor: Color = .blue
     let commonColor: Color = .gray
@@ -47,7 +48,7 @@ struct PopularMovieTableRow: View {
                 } else {
                     poster
                     
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .center) {
                         Text(title ?? "")
                             .font(.system(size: 17))
                             .fontWeight(.bold)
@@ -62,7 +63,7 @@ struct PopularMovieTableRow: View {
                                 .foregroundColor(isFavorite ? favoriteColor : commonColor)
                         }
                         .buttonStyle(PlainButtonStyle())
-                    }
+                    }.frame(width: widthForText, height: nil, alignment: .center)
                 }
             }.padding(.top, 5)
         }.background(Color.clear)

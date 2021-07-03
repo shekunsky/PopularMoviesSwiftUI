@@ -25,6 +25,7 @@ struct DetailsScreenView: View {
         }
     }
     let fontSize: CGFloat = 17
+    let spacing: CGFloat = 5
     
     private var poster: some View {
         let url = URL(string: model.posterPath ?? "")
@@ -64,7 +65,7 @@ struct DetailsScreenView: View {
             .buttonStyle(PlainButtonStyle())
             .frame(minWidth: 200, maxWidth: .infinity, minHeight: 40)
             .foregroundColor(.white)
-            .background(Color.systemGreen)
+            .background(Color.green)
         }
     }
     
@@ -110,25 +111,25 @@ struct DetailsScreenView: View {
                             .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("Adult: ")
                             .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("Popularity: ")
                             .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("Votes: ")
                             .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("Votes Average: ")
                             .font(.system(size: fontSize))
@@ -136,31 +137,31 @@ struct DetailsScreenView: View {
                     }
                 }.fixedSize(horizontal: true, vertical: false)
                 
-                VStack(alignment: .leading, spacing: 5) {
+                VStack(alignment: .leading, spacing: spacing) {
                     Group {
                         Text(model.movieDetails.release_date ?? "")
                             .font(.system(size: fontSize))
                             .italic()
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text(model.movieDetails.adult ?? false ? "YES": "NO")
                             .font(.system(size: fontSize))
                             .italic()
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("\(model.movieDetails.popularity ?? 0, specifier: "%.3f")")
                             .font(.system(size: fontSize))
                             .italic()
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("\(model.movieDetails.vote_count ?? 0)")
                             .font(.system(size: fontSize))
                             .italic()
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("\(model.movieDetails.vote_average ?? 0, specifier: "%.1f")")
                             .font(.system(size: fontSize))

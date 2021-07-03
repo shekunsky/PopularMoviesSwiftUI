@@ -33,7 +33,7 @@
 		3B0BBCDF267F82A2007731B5 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3BFAD82C263EA8610047E19C /* .gitkeep */; };
 		3B0BBCE6267F82C6007731B5 /* Core_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0BBCE4267F82A2007731B5 /* Core_watchOS.framework */; };
 		3B0BBCE7267F82C6007731B5 /* Core_watchOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0BBCE4267F82A2007731B5 /* Core_watchOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3B0BBCEF267F88E9007731B5 /* Core_watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B0BBCEA267F871B007731B5 /* Core_watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B0BBCEF267F88E9007731B5 /* Core_watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B0BBCEA267F871B007731B5 /* Core_watchOS.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3B25B95C26750C3800180970 /* SystemColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25B95426750C3800180970 /* SystemColors.swift */; };
 		3B25B96226750D1A00180970 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3B25B96126750D1A00180970 /* KingfisherSwiftUI */; };
 		3B25B96326750D1A00180970 /* KingfisherSwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 3B25B96126750D1A00180970 /* KingfisherSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };

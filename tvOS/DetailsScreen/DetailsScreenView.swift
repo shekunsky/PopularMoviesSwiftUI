@@ -18,6 +18,7 @@ struct DetailsScreenView: View {
     var widthForPoster: CGFloat = 300
     var heightForPoster: CGFloat = 400
     let fontSize: CGFloat = 25
+    let spacing: CGFloat = 5
     
     private var poster: some View {
         let url = URL(string: model.posterPath ?? "")
@@ -93,31 +94,31 @@ struct DetailsScreenView: View {
             
             // Info
             HStack {
-                VStack(alignment: .trailing, spacing: 5) {
+                VStack(alignment: .trailing, spacing: spacing) {
                     Group {
                         Text("Release Date: ")
                             .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("Adult: ")
                             .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("Popularity: ")
                             .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("Votes: ")
                             .font(.system(size: fontSize))
                             .fontWeight(.medium)
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("Votes Average: ")
                             .font(.system(size: fontSize))
@@ -131,25 +132,25 @@ struct DetailsScreenView: View {
                             .font(.system(size: fontSize))
                             .italic()
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text(model.movieDetails.adult ?? false ? "YES": "NO")
                             .font(.system(size: fontSize))
                             .italic()
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("\(model.movieDetails.popularity ?? 0, specifier: "%.3f")")
                             .font(.system(size: fontSize))
                             .italic()
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("\(model.movieDetails.vote_count ?? 0)")
                             .font(.system(size: fontSize))
                             .italic()
                         
-                        Spacer(minLength: 5)
+                        Spacer(minLength: spacing)
                         
                         Text("\(model.movieDetails.vote_average ?? 0, specifier: "%.1f")")
                             .font(.system(size: fontSize))

@@ -10,10 +10,11 @@ import Alamofire
 
 final class Network: Networking {
     
-    private let apiEndPoint: String
+    private var apiEndPoint: String { environment.baseURLAddress }
+    private let environment: AppEnvironment
     
-    init(apiEndPoint: String) {
-        self.apiEndPoint = apiEndPoint
+    init(environment: AppEnvironment) {
+        self.environment = environment
     }
     
     func get<T: Decodable>(for page: Int, completion: @escaping (T?) -> Void) {

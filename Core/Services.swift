@@ -23,7 +23,7 @@ final public class Services: UseCasesProvider, ObservableObject {
         self.environment = environment
         
         Services.setupServices(environment: environment)
-        let network = Network(apiEndPoint: environment.baseURLAddress)
+        let network = Network(environment: environment)
         let database = Database(configuration: .defaultConfiguration)
         self.context = Context(environment: environment,
                                networking: network,

@@ -30,8 +30,8 @@ final class FavoriteMoviesViewModel: BaseViewModel, ObservableObject {
     override func getPopularMovies() {
         let loadedMovies = useCases.movies.getFavoriteMovies()
         
-        DispatchQueue.main.async { [weak self] in
-            self?.popularMovies = loadedMovies
+        DispatchQueue.main.async {
+            self.popularMovies = loadedMovies
         }
     }
 }

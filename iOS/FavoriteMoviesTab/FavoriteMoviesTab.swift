@@ -33,11 +33,12 @@ struct FavoriteMoviesTab: View {
                     showDetails.toggle()
                 }
             }
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             .listRowInsets(EdgeInsets())
-            .background(Color.systemBackground)
+            .background(Color.clear)
             
         }
+        .listStyle(SidebarListStyle())
         .onAppear() {
             UITableView.appearance().separatorStyle = .none
             model.getPopularMovies()

@@ -34,15 +34,12 @@ final class PopularMoviesViewModel: BaseViewModel, ObservableObject {
         isFetchInProgress = true
         currentPage += 1
         useCases.movies.getPopularMoviesList(for: currentPage) { [weak self] (result) in
-            
-            guard let loadedMovies = result else {
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                guard let loadedMovies = result else {
                     self?.isFetchInProgress = false
                     self?.currentPage -= 1
+                    return
                 }
-                return
-            }
-            DispatchQueue.main.async {
                 self?.moviesForCurrentPage = loadedMovies
                 self?.isFetchInProgress = false
             }

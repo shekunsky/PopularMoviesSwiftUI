@@ -18,7 +18,7 @@ protocol FavoriteMoviesOperable: AbstractDatabase {
     func numberOfFavoriteMovies() -> Int
 }
 
-final class Database: FavoriteMoviesOperable {
+struct Database: FavoriteMoviesOperable {
     private let configuration: Realm.Configuration
     private var realm: Realm {
         return try! Realm(configuration: configuration)

@@ -173,6 +173,7 @@ struct DetailsScreenView: View {
     }
 }
 
+#if DEBUG
 struct DetailsScreenView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -213,3 +214,4 @@ struct DetailsScreenView_Previews: PreviewProvider {
         }
     }
 }
+#endif

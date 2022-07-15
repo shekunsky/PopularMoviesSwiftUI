@@ -8,7 +8,7 @@
 
 import Alamofire
 
-final class Network: Networking {
+struct Network: Networking {
     
     private var apiEndPoint: String { environment.baseURLAddress }
     private let environment: AppEnvironment

@@ -69,12 +69,6 @@ struct PopularMoviesTab: View {
 
 
 /// This need to have posibility hide TabBar on Details Screen
-struct PopularMoviesTab_Previews: PreviewProvider {
-    static var previews: some View {
-        PopularMoviesTab(model: PopularMoviesViewModel())
-    }
-}
-
 struct TabBarAccessor: UIViewControllerRepresentable {
     var callback: (UITabBar) -> Void
     private let proxyController = ViewController()
@@ -101,3 +95,11 @@ struct TabBarAccessor: UIViewControllerRepresentable {
         }
     }
 }
+
+#if DEBUG
+struct PopularMoviesTab_Previews: PreviewProvider {
+    static var previews: some View {
+        PopularMoviesTab(model: PopularMoviesViewModel())
+    }
+}
+#endif

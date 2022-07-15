@@ -33,8 +33,10 @@ struct AppView: View {
     }
 }
 
+#if DEBUG
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView()
+        AppView().environmentObject(Services(environment: AppEnvironment.development(.normal)))
     }
 }
+#endif

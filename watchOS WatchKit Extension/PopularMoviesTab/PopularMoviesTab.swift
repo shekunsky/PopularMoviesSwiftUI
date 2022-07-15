@@ -57,8 +57,10 @@ struct PopularMoviesTab: View {
     }
 }
 
+#if DEBUG
 struct PopularMoviesTab_Previews: PreviewProvider {
     static var previews: some View {
         PopularMoviesTab(model: PopularMoviesViewModel())
     }
 }
+#endif

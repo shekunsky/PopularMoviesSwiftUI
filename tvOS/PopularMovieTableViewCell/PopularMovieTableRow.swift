@@ -77,6 +77,7 @@ struct PopularMovieTableRow: View {
     }
 }
 
+#if DEBUG
 struct PopularMovieTableRow_Previews: PreviewProvider {
     static var previews: some View {
         PopularMovieTableRow(posterPath: "https://github.com/onevcat/Kingfisher/blob/master/images/kingfisher-1.jpg?raw=true",
@@ -87,3 +88,4 @@ struct PopularMovieTableRow_Previews: PreviewProvider {
                              favoriteAction: nil)
     }
 }
+#endif

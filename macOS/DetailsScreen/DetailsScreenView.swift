@@ -183,6 +183,7 @@ struct DetailsScreenView: View {
     }
 }
 
+#if DEBUG
 struct DetailsScreenView_Previews: PreviewProvider {
     static var previews: some View {
         DetailsScreenView(model: DetailsScreenViewModel(
@@ -204,3 +205,4 @@ struct DetailsScreenView_Previews: PreviewProvider {
                             useCases: Services(environment: AppEnvironment.development(.normal)), action: nil))
     }
 }
+#endif

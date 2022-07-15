@@ -9,36 +9,38 @@
 import SwiftUI
 import KingfisherSwiftUI
 import Core
+import Combine
 
 struct FavoriteMoviesTab: View {
     
     @ObservedObject var model: FavoriteMoviesViewModel
     @State private var selectedMovie: PopularMovie? = nil
-    @State var needRefresh: Bool = false
     
     var body: some View {
         List(selection: $selectedMovie) {
             ForEach(model.popularMovies, id: \.self) { movie in
                 NavigationLink(
-                    destination: DetailsScreenView(model: DetailsScreenViewModel(movieDetails: movie,
-                                                                                 isFavoriteMovie: model.checkIsFavoriteMovie(id: movie.id ?? 0),
-                                                                                 useCases: model.useCases,
-                                                                                 action: {
-                                                                                    model.favoriteActionWith(movie: movie)
-                                                                                    model.getPopularMovies()
-                                                                                 })),
-                    tag: movie,
-                    selection: $selectedMovie
+                    destination: DetailsScreenView(
+                        model: DetailsScreenViewModel(
+                            movieDetails: movie,
+                            isFavoriteMovie: model.checkIsFavoriteMovie(id: movie.id ?? 0),
+                            useCases: model.useCases,
+                            action: {
+                                model.favoriteActionWith(movie: movie)
+                                model.getPopularMovies()
+                            }),
+                        isFavorite: model.checkIsFavoriteMovie(id: movie.id ?? 0))
                 ) {
-                    PopularMovieTableRow(posterPath: model.fullPathToThumbnailFrom(path: movie.poster_path),
-                                         title: movie.title,
-                                         description: movie.overview,
-                                         isFavorite: Binding.constant(model.checkIsFavoriteMovie(id: movie.id ?? 0)) ,
-                                         isPreloading: false) {
-                        // FavoriteAction
-                        model.favoriteActionWith(movie: movie)
-                        model.getPopularMovies()
-                    }
+                    PopularMovieTableRow(
+                        posterPath: model.fullPathToThumbnailFrom(path: movie.poster_path),
+                        title: movie.title,
+                        description: movie.overview,
+                        isFavorite: Binding.constant(model.checkIsFavoriteMovie(id: movie.id ?? 0)) ,
+                        isPreloading: false) {
+                            // FavoriteAction
+                            model.favoriteActionWith(movie: movie)
+                            model.getPopularMovies()
+                        }
                 }
                 .tag(movie)
             }

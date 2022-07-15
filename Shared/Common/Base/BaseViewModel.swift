@@ -32,7 +32,7 @@ class BaseViewModel: ViewModel, PopularMoviesOperable, UseCasesConsumer {
     var isFetchInProgress = false
     var currentPage: Int = 0
     @Published var popularMovies: [PopularMovie] = [] {
-        willSet {
+        didSet {
             objectWillChange.send()
         }
     }

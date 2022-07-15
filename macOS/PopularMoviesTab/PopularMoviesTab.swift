@@ -19,23 +19,25 @@ struct PopularMoviesTab: View {
         List(selection: $selectedMovie) {
             ForEach(model.popularMovies, id: \.self) { movie in
                 NavigationLink(
-                    destination: DetailsScreenView(model: DetailsScreenViewModel(movieDetails: movie,
-                                                                                 isFavoriteMovie: model.checkIsFavoriteMovie(id: movie.id ?? 0),
-                                                                                 useCases: model.useCases,
-                                                                                 action: {
-                                                                                    model.favoriteActionWith(movie: movie)
-                                                                                 })),
-                    tag: movie,
-                    selection: $selectedMovie
+                    destination: DetailsScreenView(
+                        model: DetailsScreenViewModel(
+                            movieDetails: movie,
+                            isFavoriteMovie: model.checkIsFavoriteMovie(id: movie.id ?? 0),
+                            useCases: model.useCases,
+                            action: {
+                                model.favoriteActionWith(movie: movie)
+                            }),
+                        isFavorite: model.checkIsFavoriteMovie(id: movie.id ?? 0))
                 ) {
-                    PopularMovieTableRow(posterPath: model.fullPathToThumbnailFrom(path: movie.poster_path),
-                                         title: movie.title,
-                                         description: movie.overview,
-                                         isFavorite: Binding.constant(model.checkIsFavoriteMovie(id: movie.id ?? 0)) ,
-                                         isPreloading: false) {
-                        // FavoriteAction
-                        model.favoriteActionWith(movie: movie)
-                    }
+                    PopularMovieTableRow(
+                        posterPath: model.fullPathToThumbnailFrom(path: movie.poster_path),
+                        title: movie.title,
+                        description: movie.overview,
+                        isFavorite: Binding.constant(model.checkIsFavoriteMovie(id: movie.id ?? 0)) ,
+                        isPreloading: false) {
+                            // FavoriteAction
+                            model.favoriteActionWith(movie: movie)
+                        }
                 }
                 .tag(movie)
             }

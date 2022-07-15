@@ -14,6 +14,7 @@ struct DetailsScreenView: View {
     
     @ObservedObject var model: DetailsScreenViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State var isFavorite: Bool
     
     var widthForPoster: CGFloat = 200
     let fontSize: CGFloat = 17
@@ -36,7 +37,7 @@ struct DetailsScreenView: View {
     }
     
     private var actionButton: some View {
-        if model.isFavoriteMovie {
+        if isFavorite {
             return Button(action: {
                 buttonAction()
             }) {
@@ -168,9 +169,7 @@ struct DetailsScreenView: View {
     
     private func buttonAction() {
         model.makeActionOnMovie()
-        if NSApplication.shared.keyWindow?.title == appName() {
-            NSApplication.shared.keyWindow?.close()
-        }
+        isFavorite.toggle()
     }
     
     private func appName() -> String? {
@@ -202,7 +201,7 @@ struct DetailsScreenView_Previews: PreviewProvider {
                                                        video: false,
                                                        vote_average: 6),
                             isFavoriteMovie: false,
-                            useCases: Services(environment: AppEnvironment.development(.normal)), action: nil))
+                            useCases: Services(environment: AppEnvironment.development(.normal)), action: nil), isFavorite: false)
     }
 }
 #endif
